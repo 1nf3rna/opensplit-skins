@@ -1,0 +1,113 @@
+@layer skins {
+    #splitter {
+        display: flex;
+        flex: 1;
+        flex-direction: var(--splitlist-direction);
+        min-height: 0;
+    }
+
+    #splitList {
+        display: flex;
+        flex-direction: var(--splitlist-direction);
+        flex: 1;
+        min-height: 0;
+    }
+
+    #gameInfo {
+        flex: 0 0 auto; /* takes as much height as needed */
+        background-image: 
+            url("thimbo.png"),
+            url("timwave.png"),
+            var(--color-primary);
+        background-size:
+            contain,
+            contain,
+            100% 100%;
+        background-position: 
+            left,
+            95%,
+            center;
+        background-repeat: no-repeat;
+        text-align: var(--gameinfo-text-align);
+    }
+
+
+    #gameTitle {
+        font-size: var(--gameinfo-title-size);
+        font-weight: var(--gameinfo-title-font-weight);
+    }
+
+    #gameCategory {
+        margin-block: 0;
+        margin: var(--gameinfo-category-margin);
+        padding-bottom: var(--gameinfo-category-bottom-space);
+        font-size: var(--gameinfo-category-font-size);
+        font-weight: var(--gameinfo-category-font-weight);
+    }
+
+    #splitBody {
+        display: flex;
+        flex-direction: var(--splitlist-direction);
+        flex: 1;
+        min-height: 0;
+    }
+
+
+    #splitContainer {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        background-image: url("jinxtool.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 100%;
+    }
+
+    #finalSegment {
+        flex: 0 0 auto; /* do not shrink; stays at bottom of splitBody */
+        background: var(--color-primary);
+    }
+
+    #splitList table {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    #splitList table tr.selected {
+        background: var(--active-segment-background);
+        color: var(--active-segment-text-color);
+    }
+
+    #splitList table td {
+        border: var(--segment-border);
+        padding: var(--segment-padding);
+        border-left: 0;
+        border-right: 0;
+    }
+
+    #splitList #splitName {
+        width: var(--segment-name-width);
+    }
+
+    #splitList .splitDelta {
+        text-align: var(--split-delta-text-align);
+        font-family: var(--split-delta-font-family), monospace;
+    }
+
+    #splitList .splitComparison {
+        text-align: var(--split-comparison-text-align);;
+        font-family: var(--split-comparison-font-family), sans-serif;
+    }
+
+    button.collapseToggle {
+        margin-right: 6px;
+        width: 12px;
+        min-height: 8px;
+        padding: 3px;
+        border: 0;
+        line-height: 8px;
+        text-align: center;
+    }
+}
