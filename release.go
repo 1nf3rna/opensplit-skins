@@ -1,43 +1,28 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"os"
 	"os/exec"
-	"path/filepath"
 	"strconv"
 	"strings"
 )
 
-type SkinInfo struct {
-	Name    string `json:"name"`
-	Version string `json:"version"`
-}
-
 func main() {
-	entries, err := os.ReadDir("skins")
+	skins, err := skinDirs()
 	if err != nil {
 		panic(err)
 	}
 
 	var updated bool
 
-	for _, entry := range entries {
-		if !entry.IsDir() {
-			continue
-		}
-
-		skin := entry.Name()
-
-		changed := SkinChanged(skin)
-
-		if !changed {
+	for _, skin := range skins {
+		if !SkinChanged(skin) {
 			fmt.Printf("%-20s unchanged\n", skin)
 			continue
 		}
 
-		if err := bumpSkin(skin); err != nil {
+		if err := ReleaseSkin(skin); err != nil {
 			panic(err)
 		}
 
@@ -49,63 +34,113 @@ func main() {
 	}
 }
 
+func skinDirs() ([]string, error) {
+	entries, err := os.ReadDir(".")
+	if err != nil {
+		return nil, err
+	}
+
+	var skins []string
+
+	for _, e := range entries {
+		if !e.IsDir() {
+			continue
+		}
+
+		name := e.Name()
+
+		if strings.HasPrefix(name, ".") {
+			continue
+		}
+
+		skins = append(skins, name)
+	}
+
+	return skins, nil
+}
+
 func ReleaseSkin(skin string) error {
 	current := SkinVersion(skin)
 
-	next := bumpPatch(current)
+	var next string
 
-	tag := fmt.Sprintf(
-		"skin/%s/%s",
+	if current == "v0.0.0" {
+		next = "1.0.0"
+	} else {
+		next = bumpPatch(current)
+	}
+
+	tag := fmt.Sprintf("%s/v%s", skin, next)
+
+	fmt.Printf(
+		"%-20s %s -> v%s\n",
 		skin,
+		current,
 		next,
 	)
 
-	cmd := exec.Command("git", "tag", tag)
-
-	return cmd.Run()
+	return exec.Command("git", "tag", tag).Run()
 }
 
 func SkinVersion(skin string) string {
-	tagPattern := fmt.Sprintf("skin/%s/*", skin)
+	tag := latestTag(skin)
 
-	cmd := exec.Command(
-		"git",
-		"tag",
-		"--list",
-		tagPattern,
-		"--sort=-version:refname",
-	)
-
-	out, err := cmd.Output()
-	if err != nil {
+	if tag == "" {
 		return "v0.0.0"
 	}
 
-	tags := strings.Fields(string(out))
-	if len(tags) == 0 {
-		return "v0.0.0"
-	}
-
-	parts := strings.Split(tags[0], "/")
+	parts := strings.Split(tag, "/")
 	return parts[len(parts)-1]
 }
+
+// func SkinVersion(skin string) string {
+// 	tagPattern := fmt.Sprintf("skin/%s/*", skin)
+
+// 	cmd := exec.Command(
+// 		"git",
+// 		"tag",
+// 		"--list",
+// 		tagPattern,
+// 		"--sort=-version:refname",
+// 	)
+
+// 	out, err := cmd.Output()
+// 	if err != nil {
+// 		return "v0.0.0"
+// 	}
+
+// 	tags := strings.Fields(string(out))
+// 	if len(tags) == 0 {
+// 		return "v0.0.0"
+// 	}
+
+// 	parts := strings.Split(tags[0], "/")
+// 	return parts[len(parts)-1]
+// }
 
 func SkinChanged(skin string) bool {
 	tag := latestTag(skin)
 
-	if tag == "" {
-		return true
-	}
+	var cmd *exec.Cmd
 
-	cmd := exec.Command(
-		"git",
-		"diff",
-		"--name-only",
-		tag,
-		"HEAD",
-		"--",
-		filepath.Join("skins", skin),
-	)
+	if tag == "" {
+		cmd = exec.Command(
+			"git",
+			"log",
+			"--oneline",
+			"--",
+			skin,
+		)
+	} else {
+		cmd = exec.Command(
+			"git",
+			"log",
+			"--oneline",
+			fmt.Sprintf("%s..HEAD", tag),
+			"--",
+			skin,
+		)
+	}
 
 	out, err := cmd.Output()
 	if err != nil {
@@ -116,7 +151,7 @@ func SkinChanged(skin string) bool {
 }
 
 func latestTag(skin string) string {
-	pattern := fmt.Sprintf("skin/%s/*", skin)
+	pattern := fmt.Sprintf("%s/v*", skin)
 
 	out, err := exec.Command(
 		"git",
@@ -130,72 +165,22 @@ func latestTag(skin string) string {
 		return ""
 	}
 
-	lines := strings.Fields(string(out))
-	if len(lines) == 0 {
+	tags := strings.Fields(string(out))
+	if len(tags) == 0 {
 		return ""
 	}
 
-	return lines[0]
-}
-
-func bumpSkin(skin string) error {
-	path := filepath.Join("skins", skin, "skin.json")
-
-	data, err := os.ReadFile(path)
-	if err != nil {
-		return err
-	}
-
-	var info SkinInfo
-
-	if err := json.Unmarshal(data, &info); err != nil {
-		return err
-	}
-
-	oldVersion := info.Version
-	newVersion := bumpPatch(oldVersion)
-
-	info.Version = newVersion
-
-	out, err := json.MarshalIndent(info, "", "  ")
-	if err != nil {
-		return err
-	}
-
-	if err := os.WriteFile(path, out, 0644); err != nil {
-		return err
-	}
-
-	run("git", "add", path)
-
-	msg := fmt.Sprintf(
-		"Release skin %s v%s",
-		skin,
-		newVersion,
-	)
-
-	run("git", "commit", "-m", msg)
-
-	tag := fmt.Sprintf(
-		"skin/%s/v%s",
-		skin,
-		newVersion,
-	)
-
-	run("git", "tag", tag)
-
-	fmt.Printf(
-		"%-20s %s -> %s\n",
-		skin,
-		oldVersion,
-		newVersion,
-	)
-
-	return nil
+	return tags[0]
 }
 
 func bumpPatch(v string) string {
+	v = strings.TrimPrefix(v, "v")
+
 	parts := strings.Split(v, ".")
+
+	if len(parts) != 3 {
+		return "0.0.1"
+	}
 
 	major, _ := strconv.Atoi(parts[0])
 	minor, _ := strconv.Atoi(parts[1])
@@ -203,20 +188,15 @@ func bumpPatch(v string) string {
 
 	patch++
 
-	return fmt.Sprintf(
-		"%d.%d.%d",
-		major,
-		minor,
-		patch,
-	)
+	return fmt.Sprintf("%d.%d.%d", major, minor, patch)
 }
 
-func run(name string, args ...string) {
-	cmd := exec.Command(name, args...)
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
+// func run(name string, args ...string) {
+// 	cmd := exec.Command(name, args...)
+// 	cmd.Stdout = os.Stdout
+// 	cmd.Stderr = os.Stderr
 
-	if err := cmd.Run(); err != nil {
-		panic(err)
-	}
-}
+// 	if err := cmd.Run(); err != nil {
+// 		panic(err)
+// 	}
+// }
