@@ -14,7 +14,7 @@ func main() {
 		panic(err)
 	}
 
-	var updated bool
+	var tags []string
 
 	for _, skin := range skins {
 		if !SkinChanged(skin) {
@@ -22,15 +22,29 @@ func main() {
 			continue
 		}
 
-		if err := ReleaseSkin(skin); err != nil {
+		tag, err := ReleaseSkin(skin)
+		if err != nil {
 			panic(err)
 		}
 
-		updated = true
+		tags = append(tags, tag)
 	}
 
-	if !updated {
+	if len(tags) == 0 {
 		fmt.Println("No skin changes detected.")
+		return
+	}
+
+	for _, tag := range tags {
+		fmt.Printf("Pushing %s\n", tag)
+
+		cmd := exec.Command("git", "push", "origin", tag)
+		cmd.Stdout = os.Stdout
+		cmd.Stderr = os.Stderr
+
+		if err := cmd.Run(); err != nil {
+			panic(err)
+		}
 	}
 }
 
@@ -59,7 +73,7 @@ func skinDirs() ([]string, error) {
 	return skins, nil
 }
 
-func ReleaseSkin(skin string) error {
+func ReleaseSkin(skin string) (string, error) {
 	current := SkinVersion(skin)
 
 	var next string
@@ -79,7 +93,29 @@ func ReleaseSkin(skin string) error {
 		next,
 	)
 
-	return exec.Command("git", "tag", tag).Run()
+	if err := exec.Command("git", "tag", tag).Run(); err != nil {
+		return "", err
+	}
+
+	return tag, nil
+}
+
+func bumpPatch(v string) string {
+	v = strings.TrimPrefix(v, "v")
+
+	parts := strings.Split(v, ".")
+
+	if len(parts) != 3 {
+		return "0.0.1"
+	}
+
+	major, _ := strconv.Atoi(parts[0])
+	minor, _ := strconv.Atoi(parts[1])
+	patch, _ := strconv.Atoi(parts[2])
+
+	patch++
+
+	return fmt.Sprintf("%d.%d.%d", major, minor, patch)
 }
 
 func SkinVersion(skin string) string {
@@ -92,31 +128,6 @@ func SkinVersion(skin string) string {
 	parts := strings.Split(tag, "/")
 	return parts[len(parts)-1]
 }
-
-// func SkinVersion(skin string) string {
-// 	tagPattern := fmt.Sprintf("skin/%s/*", skin)
-
-// 	cmd := exec.Command(
-// 		"git",
-// 		"tag",
-// 		"--list",
-// 		tagPattern,
-// 		"--sort=-version:refname",
-// 	)
-
-// 	out, err := cmd.Output()
-// 	if err != nil {
-// 		return "v0.0.0"
-// 	}
-
-// 	tags := strings.Fields(string(out))
-// 	if len(tags) == 0 {
-// 		return "v0.0.0"
-// 	}
-
-// 	parts := strings.Split(tags[0], "/")
-// 	return parts[len(parts)-1]
-// }
 
 func SkinChanged(skin string) bool {
 	tag := latestTag(skin)
@@ -172,31 +183,3 @@ func latestTag(skin string) string {
 
 	return tags[0]
 }
-
-func bumpPatch(v string) string {
-	v = strings.TrimPrefix(v, "v")
-
-	parts := strings.Split(v, ".")
-
-	if len(parts) != 3 {
-		return "0.0.1"
-	}
-
-	major, _ := strconv.Atoi(parts[0])
-	minor, _ := strconv.Atoi(parts[1])
-	patch, _ := strconv.Atoi(parts[2])
-
-	patch++
-
-	return fmt.Sprintf("%d.%d.%d", major, minor, patch)
-}
-
-// func run(name string, args ...string) {
-// 	cmd := exec.Command(name, args...)
-// 	cmd.Stdout = os.Stdout
-// 	cmd.Stderr = os.Stderr
-
-// 	if err := cmd.Run(); err != nil {
-// 		panic(err)
-// 	}
-// }
