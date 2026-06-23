@@ -7,3 +7,6 @@ FF6 (jeremysmitherman)\
 Hammerwatch (1nf3rna)\
 HomeImprovement (SensaiOpti)\
 SuperMetroid (SensaiOpti)
+
+In order to update tags:
+go run release.go
