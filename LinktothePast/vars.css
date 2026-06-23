@@ -1,0 +1,32 @@
+@layer vars {
+    :root {
+        /* colors */
+        /* Overworld-style green gradient (Link to the Past) */
+        --color-primary: linear-gradient(to bottom, #184a2c, #0b2414);
+
+        /* segment container */
+        --splitlist-direction: column;
+
+        /* game information section */
+        --gameinfo-text-align: center;
+        --gameinfo-title-size: 20px;
+        --gameinfo-title-font-weight: normal;
+        --gameinfo-category-margin: 0;
+        --gameinfo-category-bottom-space: 10px;
+        --gameinfo-category-font-size: 20px;
+        --gameinfo-category-font-weight: normal;
+
+        /* segment list */
+        /* Active row: dark forest green with light parchment text */
+        --active-segment-background: #06120a;
+        --active-segment-text-color: #f7f3c6;
+        /* Subtle mossy borders between rows */
+        --segment-border: 2px solid #2b3f30;
+        --segment-padding: 5px;
+        --segment-name-width: 60%;
+        --split-delta-font-family: Monofonto, monospace;
+        --split-delta-text-align: right;
+        --split-comparison-text-align: right;
+        --split-comparison-font-family: Monofonto, monospace;
+    }
+}

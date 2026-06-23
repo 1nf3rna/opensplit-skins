@@ -1,0 +1,53 @@
+@layer overrides{
+    :root{
+        /* Global skin background: very dark night-over-Hyrule green */
+        --app-background-color: #050b07;
+        --app-foreground-color: #f7f3c6;
+    }
+
+    /* Splitter frame styling */
+    #splitter {
+        background: radial-gradient(circle at top, #101810 0%, #050b07 55%, #000000 100%);
+    }
+
+    #splitList table {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+    }
+
+    #gameInfo,
+    #finalSegment {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    #finalSegment {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    #splitList table tr:nth-child(even):not(.selected) td {
+        background-color: rgba(10, 26, 16, 0.9);
+    }
+
+    #splitList table tr:nth-child(odd):not(.selected) td {
+        background-color: rgba(6, 18, 10, 0.9);
+    }
+
+    /* When the timer is showing a gold split, play tri2.gif in the title area */
+    body:has(.timer-gold) #gameInfo {
+        background-image: url("./tri2.gif"), var(--color-primary);
+        background-size: cover, cover;
+        background-position: center, center;
+        color: #fdf9d8;
+        text-shadow: 0 0 6px #000, 0 0 12px #f3d25b;
+        animation: triforce-title-pulse 1.2s ease-in-out infinite;
+    }
+
+    @keyframes triforce-title-pulse {
+        0%   { transform: scale(1); }
+        50%  { transform: scale(1.02); }
+        100% { transform: scale(1); }
+    }
+}

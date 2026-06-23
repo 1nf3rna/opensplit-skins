@@ -1,0 +1,32 @@
+/*
+This is a super over-engineered gradient to celebrate a PB.
+Technically any CSS can go on any element, on getting a PB
+the "pb" class name will be added to every element in the splutter
+*/
+
+#gameInfo.pb,#finalSegment.pb {
+    /* Sanctuary-style deep green with Triforce shimmer for PB */
+    background-color: #184a2c;
+    background-image:
+    linear-gradient(
+      120deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.18) 40%,
+      rgba(255,255,210,1), 50%,
+      rgba(255,255,255,0.18) 60%,
+      rgba(255,255,255,0) 100%
+    ),
+    var(--existing-bg, none);
+
+  background-repeat: no-repeat, no-repeat;
+  background-size: 250% 100%, cover;
+  background-position: -150% 0, 0 0;
+
+  animation: shimmerMove .6s linear infinite;
+}
+
+/* Only move the shimmer layer */
+@keyframes shimmerMove {
+  from { background-position: -150% 0, 0 0; }
+  to   { background-position: 150% 0, 0 0; }
+}

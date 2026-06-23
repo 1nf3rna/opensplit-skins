@@ -1,0 +1,30 @@
+@layer skins {
+    #timer-container {
+        flex: 0 0 auto; /* do not shrink; stays at bottom of splitter */
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 10px;
+    }
+
+    #time-container {
+        font-family: "Monofonto", sans-serif;
+        font-size: 50px;
+    }
+
+    .timer-ahead {
+        /* Bright rupee-like green for being ahead */
+        color: #6cf084;
+    }
+
+    .timer-behind {
+        /* Deep Ganon-esque maroon backdrop when behind */
+        background-color: #220609;
+        color: #ff6450;
+    }
+
+    .timer-gold {
+        /* Triforce gold for gold splits */
+        color: #f3d25b;
+    }
+}
