@@ -1,7 +1,7 @@
 @layer vars {
     :root {
         /* colors */
-        --color-primary: linear-gradient(to bottom, #144D5E, #141440);
+        --color-primary: linear-gradient(to bottom, #144d5e, #141440);
 
         /* segment container */
         --splitlist-direction: column;
@@ -21,9 +21,9 @@
         --segment-border: 1px solid #1c1f30;
         --segment-padding: 5px;
         --segment-name-width: 60%;
-        --split-delta-font-family: Monofonto, monospace;
+        --split-delta-font-family: Serpentine, monospace;
         --split-delta-text-align: right;
         --split-comparison-text-align: right;
-        --split-comparison-font-family: Monofonto, monospace;
+        --split-comparison-font-family: Serpentine, monospace;
     }
 }
