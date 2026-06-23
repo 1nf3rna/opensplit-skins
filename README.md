@@ -1,12 +1,13 @@
 # opensplit-skins
-Skins for opensplit
+Skins for opensplit<br>
 
-Authors:
-default (jeremysmitherman)\
-FF6 (jeremysmitherman)\
-Hammerwatch (1nf3rna)\
-HomeImprovement (SensaiOpti)\
-SuperMetroid (SensaiOpti)
+Authors:<br>
+default (jeremysmitherman)<br>
+FF6 (jeremysmitherman)<br>
+Hammerwatch (1nf3rna)<br>
+HomeImprovement (SensaiOpti)<br>
+LinktothePast (SensaiOpti)<br>
+SuperMetroid (SensaiOpti)<br>
 
-In order to update tags:
-go run release.go
+In order to update tags:<br>
+go run release.go<br>
