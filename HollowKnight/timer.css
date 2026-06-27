@@ -1,0 +1,31 @@
+@layer skins {
+    #timer-container {
+        flex: 0 0 auto; /* do not shrink; stays at bottom of splitter */
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 10px;
+        background-image: url("./images/hollowknightrunright.gif");
+        background-repeat: no-repeat;
+        background-size: 30%;
+        background-position: left;
+        background-color: #242b3d;
+    }
+
+    #time-container {
+        font-family: "Trajan Pro", bold;
+        font-size: 50px;
+    }
+
+    .timer-ahead {
+        color: #00ff00;
+    }
+
+    .timer-behind {
+        color: #ff0000;
+    }
+
+    .timer-gold {
+        color: gold;
+    }
+}

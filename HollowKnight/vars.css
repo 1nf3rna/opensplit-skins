@@ -1,0 +1,29 @@
+@layer vars {
+    :root {
+        /* colors */
+        --color-primary: linear-gradient(135deg, #485d81, #242b3d);
+
+        /* segment container */
+        --splitlist-direction: column;
+
+        /* game information section */
+        --gameinfo-text-align: center;
+        --gameinfo-title-size: 20px;
+        --gameinfo-title-font-weight: normal;
+        --gameinfo-category-margin: 0;
+        --gameinfo-category-bottom-space: 2px;
+        --gameinfo-category-font-size: 16px;
+        --gameinfo-category-font-weight: normal;
+
+        /* segment list */
+        --active-segment-background: #1a163ebf;
+        --active-segment-text-color: #b2a4bd;
+        --segment-border: 2px solid #22345c1a;
+        --segment-padding: 5px;
+        --segment-name-width: 60%;
+        --split-delta-font-family: Trajan Pro, monospace;
+        --split-delta-text-align: right;
+        --split-comparison-text-align: right;
+        --split-comparison-font-family: Trajan Pro, monospace;
+    }
+}

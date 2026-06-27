@@ -1,0 +1,116 @@
+@layer skins {
+    #splitter {
+        display: flex;
+        flex: 1;
+        flex-direction: var(--splitlist-direction);
+        min-height: 0;
+    }
+
+    #splitList {
+        display: flex;
+        flex-direction: var(--splitlist-direction);
+        flex: 1;
+        min-height: 0;
+    }
+
+    #gameInfo {
+        flex: 0 0 auto; /* takes as much height as needed */
+        background: var(--color-primary);
+        text-align: var(--gameinfo-text-align);
+        font-family: var(--split-delta-font-family), monospace;
+    }
+
+    #gameTitle {
+        font-size: var(--gameinfo-title-size);
+        font-weight: var(--gameinfo-title-font-weight);
+        font-family: var(--split-delta-font-family), monospace;
+    }
+
+    #gameCategory {
+        position: relative;
+        top: -10px;
+        margin-block: 0;
+        margin: var(--gameinfo-category-margin);
+        padding-bottom: var(--gameinfo-category-bottom-space);
+        font-size: var(--gameinfo-category-font-size);
+        font-weight: var(--gameinfo-category-font-weight);
+        font-family: var(--split-delta-font-family), monospace;
+    }
+
+    #splitBody {
+        display: flex;
+        flex-direction: var(--splitlist-direction);
+        flex: 1;
+        min-height: 0;
+    }
+
+    #splitContainer {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        font-family: var(--split-delta-font-family), monospace;
+        background-image: url("./images/pastelbackgroundedit.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 25% 25%;
+    }
+
+    #finalSegment {
+        flex: 0 0 auto; /* do not shrink; stays at bottom of splitBody */
+        background: var(--color-primary);
+        font-family: var(--split-delta-font-family), monospace;
+    }
+
+    #splitList table {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    #splitList table tr.selected {
+        background: var(--active-segment-background);
+        color: var(--active-segment-text-color);
+    }
+
+    #splitList table td {
+        border: var(--segment-border);
+        padding: var(--segment-padding);
+        border-left: 0;
+        border-right: 0;
+        color: var(--inactive-segment-text-color);
+        text-shadow:
+            1px 1px 0px #1a163e,
+            1px 1px 1px #1a163e,
+            2px 2px 2px #1a163e;
+    }
+
+    #splitList #splitName {
+        width: var(--segment-name-width);
+    }
+
+    #splitList .splitDelta {
+        text-align: var(--split-delta-text-align);
+        font-family: var(--split-delta-font-family), monospace;
+    }
+
+    #splitList .splitComparison {
+        text-align: var(--split-comparison-text-align);
+        font-family: var(--split-comparison-font-family), sans-serif;
+    }
+
+    #attempts {
+        position: relative;
+        top: -10px;
+    }
+
+    button.collapseToggle {
+        margin-right: 6px;
+        width: 12px;
+        min-height: 8px;
+        padding: 3px;
+        border: 0;
+        line-height: 8px;
+        text-align: center;
+    }
+}
