@@ -93,7 +93,14 @@ func ReleaseSkin(skin string) (string, error) {
 		next,
 	)
 
-	if err := exec.Command("git", "tag", tag).Run(); err != nil {
+	// if err := exec.Command("git", "tag", tag).Run(); err != nil {
+	// 	return "", err
+	// }
+	cmd := exec.Command("git", "tag", tag)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+
+	if err := cmd.Run(); err != nil {
 		return "", err
 	}
 
