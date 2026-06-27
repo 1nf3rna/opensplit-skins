@@ -24,9 +24,9 @@
         --segment-border: 2px solid #2b3f30;
         --segment-padding: 5px;
         --segment-name-width: 60%;
-        --split-delta-font-family: Monofonto, monospace;
+        --split-delta-font-family: Hylia Serif Beta, monospace;
         --split-delta-text-align: right;
         --split-comparison-text-align: right;
-        --split-comparison-font-family: Monofonto, monospace;
+        --split-comparison-font-family: Hylia Serif Beta, monospace;
     }
 }

@@ -8,7 +8,7 @@
     }
 
     #time-container {
-        font-family: "Monofonto", sans-serif;
+        font-family: "Hylia Serif Beta", sans-serif;
         font-size: 50px;
     }
 
@@ -19,8 +19,7 @@
 
     .timer-behind {
         /* Deep Ganon-esque maroon backdrop when behind */
-        background-color: #220609;
-        color: #ff6450;
+        color: #f00;
     }
 
     .timer-gold {

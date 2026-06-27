@@ -5,7 +5,7 @@
         flex-direction: row;
         justify-content: flex-end;
         padding: 10px;
-        background-image: url("tooltime.png");
+        background-image: url("./images/tooltime.png");
         background-repeat: no-repeat;
     }
 
@@ -19,7 +19,6 @@
     }
 
     .timer-behind {
-        background-color: #000;
         color: #f00;
     }
 

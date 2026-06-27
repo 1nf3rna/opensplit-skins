@@ -11,17 +11,20 @@
         flex-direction: var(--splitlist-direction);
         flex: 1;
         min-height: 0;
+        font-family: var(--split-comparison-font-family), sans-serif;
     }
 
     #gameInfo {
         flex: 0 0 auto; /* takes as much height as needed */
         background: var(--color-primary);
         text-align: var(--gameinfo-text-align);
+        font-family: var(--split-comparison-font-family), sans-serif;
     }
 
     #gameTitle {
         font-size: var(--gameinfo-title-size);
         font-weight: var(--gameinfo-title-font-weight);
+        font-family: var(--split-comparison-font-family), sans-serif;
     }
 
     #gameCategory {
@@ -79,14 +82,13 @@
     }
 
     #splitList .splitComparison {
-        text-align: var(--split-comparison-text-align);;
+        text-align: var(--split-comparison-text-align);
         font-family: var(--split-comparison-font-family), sans-serif;
     }
 
     #attempts {
-        position:absolute;
-        top: 5px;
-        right: 3px;
+        position: relative;
+        top: 0px;
     }
 
     button.collapseToggle {

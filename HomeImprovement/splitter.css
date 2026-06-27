@@ -16,8 +16,8 @@
     #gameInfo {
         flex: 0 0 auto; /* takes as much height as needed */
         background-image: 
-            url("thimbo.png"),
-            url("timwave.png"),
+            url("./images/thimbo.png"),
+            url("./images/timwave.png"),
             var(--color-primary);
         background-size:
             contain,
@@ -57,7 +57,7 @@
         flex: 1;
         min-height: 0;
         overflow-y: auto;
-        background-image: url("jinxtool.png");
+        background-image: url("./images/jinxtool.png");
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: 50% 100%;

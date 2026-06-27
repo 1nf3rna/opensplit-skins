@@ -5,7 +5,7 @@
         flex-direction: row;
         justify-content: flex-end;
         padding: 10px;
-        background-image: url("samusrunning.gif");
+        background-image: url("./images/samusrunning.gif");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: left;
@@ -22,7 +22,6 @@
     }
 
     .timer-behind {
-        background-color: #000;
         color: #f00;
     }
 

@@ -3,7 +3,7 @@
     }
     /* When the timer is showing a gold split, play samusrunningfast.gif in the title area */
     body:has(.timer-gold) #timer-container {
-        background-image: url("./samusrunningfast.gif");
+        background-image: url("./images/samusrunningfast.gif");
         background-size: contain, contain;
         background-position: left, left;
     }

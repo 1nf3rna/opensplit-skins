@@ -15,7 +15,7 @@
 
     #gameInfo {
         flex: 0 0 auto; /* takes as much height as needed */
-        background-image: url("metroid.gif"), var(--color-primary);
+        background-image: url("./images/metroid.gif"), var(--color-primary);
         background-size:
             contain,
             100% 100%;
@@ -51,7 +51,7 @@
         flex: 1;
         min-height: 0;
         overflow-y: auto;
-        background-image: url("metroidback.png");
+        background-image: url("./images/metroidback.png");
         background-size: 200%;
         background-repeat: no-repeat;
         background-position: 50% 100%;

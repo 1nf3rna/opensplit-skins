@@ -36,13 +36,13 @@
     }
 
     /* When the timer is showing a gold split, play tri2.gif in the title area */
+    /* I unfortunately don't know how to get this to then disappear, which is a shame. */
+    /* Or even to fire only if the most recent split was gold. Help! */
     body:has(.timer-gold) #gameInfo {
-        background-image: url("./tri2.gif"), var(--color-primary);
+        background-image: url("./images/tri2.gif"), var(--color-primary);
         background-size: cover, cover;
         background-position: center, center;
-        color: #fdf9d8;
-        text-shadow: 0 0 6px #000, 0 0 12px #f3d25b;
-        animation: triforce-title-pulse 1.2s ease-in-out infinite;
+        background-repeat: no-repeat, no-repeat;
     }
 
     @keyframes triforce-title-pulse {
