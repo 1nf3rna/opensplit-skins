@@ -1,0 +1,26 @@
+@layer skins {
+    #timer-container {
+        flex: 0 0 auto; /* do not shrink; stays at bottom of splitter */
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 10px;
+    }
+
+    #time-container {
+        font-family: "Monofonto", sans-serif;
+        font-size: 50px;
+    }
+
+    .timer-ahead {
+        color: greenyellow;
+    }
+
+    .timer-behind {
+        color: #f00;
+    }
+
+    .timer-gold {
+        color: gold;
+    }
+}
