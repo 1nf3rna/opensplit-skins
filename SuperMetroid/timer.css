@@ -1,15 +1,12 @@
 @layer skins {
     #timer-container {
-        flex: 0 0 auto; /* do not shrink; stays at bottom of splitter */
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
         padding: 10px;
+
+        background-color: #141943;
         background-image: url("./images/samusrunning.gif");
         background-repeat: no-repeat;
         background-size: contain;
-        background-position: left;
-        background-color: #141943;
+        background-position: left center;
     }
 
     #time-container {

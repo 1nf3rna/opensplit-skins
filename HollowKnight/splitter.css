@@ -1,54 +1,45 @@
 @layer skins {
     #splitter {
-        display: flex;
-        flex: 1;
         flex-direction: var(--splitlist-direction);
-        min-height: 0;
     }
 
     #splitList {
-        display: flex;
         flex-direction: var(--splitlist-direction);
-        flex: 1;
-        min-height: 0;
     }
 
     #gameInfo {
-        flex: 0 0 auto; /* takes as much height as needed */
+        position: relative;
+
         background: var(--color-primary);
         text-align: var(--gameinfo-text-align);
         font-family: var(--split-delta-font-family), monospace;
     }
 
     #gameTitle {
+        font-family: var(--split-delta-font-family), monospace;
         font-size: var(--gameinfo-title-size);
         font-weight: var(--gameinfo-title-font-weight);
-        font-family: var(--split-delta-font-family), monospace;
     }
 
     #gameCategory {
         position: relative;
         top: -10px;
-        margin-block: 0;
+
         margin: var(--gameinfo-category-margin);
         padding-bottom: var(--gameinfo-category-bottom-space);
+
+        font-family: var(--split-delta-font-family), monospace;
         font-size: var(--gameinfo-category-font-size);
         font-weight: var(--gameinfo-category-font-weight);
-        font-family: var(--split-delta-font-family), monospace;
     }
 
     #splitBody {
-        display: flex;
         flex-direction: var(--splitlist-direction);
-        flex: 1;
-        min-height: 0;
     }
 
     #splitContainer {
-        flex: 1;
-        min-height: 0;
-        overflow-y: auto;
         font-family: var(--split-delta-font-family), monospace;
+
         background-image: url("./images/pastelbackgroundedit.jpg");
         background-size: 100%;
         background-repeat: no-repeat;
@@ -56,16 +47,8 @@
     }
 
     #finalSegment {
-        flex: 0 0 auto; /* do not shrink; stays at bottom of splitBody */
         background: var(--color-primary);
         font-family: var(--split-delta-font-family), monospace;
-    }
-
-    #splitList table {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        border-collapse: collapse;
     }
 
     #splitList table tr.selected {
@@ -75,42 +58,38 @@
 
     #splitList table td {
         border: var(--segment-border);
-        padding: var(--segment-padding);
         border-left: 0;
         border-right: 0;
+        padding: var(--segment-padding);
+
         color: var(--inactive-segment-text-color);
+
         text-shadow:
-            1px 1px 0px #1a163e,
+            1px 1px 0 #1a163e,
             1px 1px 1px #1a163e,
             2px 2px 2px #1a163e;
     }
 
-    #splitList #splitName {
+    #splitName {
         width: var(--segment-name-width);
     }
 
-    #splitList .splitDelta {
+    .splitDelta {
         text-align: var(--split-delta-text-align);
         font-family: var(--split-delta-font-family), monospace;
     }
 
-    #splitList .splitComparison {
+    .splitComparison {
         text-align: var(--split-comparison-text-align);
-        font-family: var(--split-comparison-font-family), sans-serif;
+        font-family: var(--split-comparison-font-family), monospace;
     }
 
+    /* Move attempts back to match previous appearance */
     #attempts {
-        position: relative;
-        top: -10px;
+        top: -2px;
     }
 
     button.collapseToggle {
         margin-right: 6px;
-        width: 12px;
-        min-height: 8px;
-        padding: 3px;
-        border: 0;
-        line-height: 8px;
-        text-align: center;
     }
 }

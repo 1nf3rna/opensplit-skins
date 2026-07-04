@@ -1,12 +1,10 @@
 @layer skins {
     #timer-container {
-        flex: 0 0 auto; /* do not shrink; stays at bottom of splitter */
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
         padding: 10px;
-        background-image: url("chocoborace.png?v=2");
+
+        background-image: url("./chocoborace.png?v=2");
         background-repeat: no-repeat;
+        background-position: left center;
     }
 
     #time-container {
@@ -19,7 +17,7 @@
     }
 
     .timer-behind {
-        background-color: #000;
+        background: #000;
         color: #f00;
     }
 

@@ -1,21 +1,16 @@
 @layer skins {
     #splitter {
-        display: flex;
-        flex: 1;
         flex-direction: var(--splitlist-direction);
-        min-height: 0;
     }
 
     #splitList {
-        display: flex;
         flex-direction: var(--splitlist-direction);
-        flex: 1;
-        min-height: 0;
         font-family: var(--split-comparison-font-family), sans-serif;
     }
 
     #gameInfo {
-        flex: 0 0 auto; /* takes as much height as needed */
+        position: relative;
+
         background: var(--color-primary);
         text-align: var(--gameinfo-text-align);
         font-family: var(--split-comparison-font-family), sans-serif;
@@ -28,36 +23,19 @@
     }
 
     #gameCategory {
-        margin-block: 0;
         margin: var(--gameinfo-category-margin);
         padding-bottom: var(--gameinfo-category-bottom-space);
+
         font-size: var(--gameinfo-category-font-size);
         font-weight: var(--gameinfo-category-font-weight);
     }
 
     #splitBody {
-        display: flex;
         flex-direction: var(--splitlist-direction);
-        flex: 1;
-        min-height: 0;
-    }
-
-    #splitContainer {
-        flex: 1;
-        min-height: 0;
-        overflow-y: auto;
     }
 
     #finalSegment {
-        flex: 0 0 auto; /* do not shrink; stays at bottom of splitBody */
         background: var(--color-primary);
-    }
-
-    #splitList table {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        border-collapse: collapse;
     }
 
     #splitList table tr.selected {
@@ -67,37 +45,31 @@
 
     #splitList table td {
         border: var(--segment-border);
-        padding: var(--segment-padding);
         border-left: 0;
         border-right: 0;
+        padding: var(--segment-padding);
     }
 
-    #splitList #splitName {
+    #splitName {
         width: var(--segment-name-width);
     }
 
-    #splitList .splitDelta {
+    .splitDelta {
         text-align: var(--split-delta-text-align);
         font-family: var(--split-delta-font-family), monospace;
     }
 
-    #splitList .splitComparison {
+    .splitComparison {
         text-align: var(--split-comparison-text-align);
-        font-family: var(--split-comparison-font-family), sans-serif;
+        font-family: var(--split-comparison-font-family), monospace;
     }
 
+    /* Keep attempts in the same vertical position as the old skin */
     #attempts {
-        position: relative;
-        top: 0px;
+        top: 0;
     }
 
     button.collapseToggle {
         margin-right: 6px;
-        width: 12px;
-        min-height: 8px;
-        padding: 3px;
-        border: 0;
-        line-height: 8px;
-        text-align: center;
     }
 }

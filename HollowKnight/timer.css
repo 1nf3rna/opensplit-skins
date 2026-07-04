@@ -1,19 +1,16 @@
 @layer skins {
     #timer-container {
-        flex: 0 0 auto; /* do not shrink; stays at bottom of splitter */
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
         padding: 10px;
+
+        background-color: #242b3d;
         background-image: url("./images/hollowknightrunright.gif");
         background-repeat: no-repeat;
         background-size: 30%;
-        background-position: left;
-        background-color: #242b3d;
+        background-position: left center;
     }
 
     #time-container {
-        font-family: "Trajan Pro", bold;
+        font-family: "Trajan Pro", monospace;
         font-size: 50px;
     }
 

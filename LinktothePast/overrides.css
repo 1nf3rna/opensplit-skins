@@ -1,5 +1,5 @@
-@layer overrides{
-    :root{
+@layer overrides {
+    :root {
         /* Global skin background: very dark night-over-Hyrule green */
         --app-background-color: #050b07;
         --app-foreground-color: #f7f3c6;
@@ -7,7 +7,12 @@
 
     /* Splitter frame styling */
     #splitter {
-        background: radial-gradient(circle at top, #101810 0%, #050b07 55%, #000000 100%);
+        background: radial-gradient(
+            circle at top,
+            #101810 0%,
+            #050b07 55%,
+            #000000 100%
+        );
     }
 
     #splitList table {
@@ -46,8 +51,14 @@
     }
 
     @keyframes triforce-title-pulse {
-        0%   { transform: scale(1); }
-        50%  { transform: scale(1.02); }
-        100% { transform: scale(1); }
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.02);
+        }
+        100% {
+            transform: scale(1);
+        }
     }
 }
