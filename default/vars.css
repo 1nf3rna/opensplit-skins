@@ -3,33 +3,38 @@
         /* Colors */
         --color-primary: linear-gradient(to bottom, #4f0f7f, #400060);
 
-        /* Split list */
+        /* Layout */
         --splitlist-direction: column;
 
         /* Game info */
         --gameinfo-text-align: center;
+        /* Game info title */
         --gameinfo-title-size: 20px;
         --gameinfo-title-font-weight: normal;
         --gameinfo-title-padding: 4px 0;
         --gameinfo-title-line-height: 1.15;
 
+        /* Game info category */
         --gameinfo-category-margin: 4px 0 0;
         --gameinfo-category-padding: 0 0 4px;
         --gameinfo-category-font-size: 20px;
         --gameinfo-category-font-weight: normal;
         --gameinfo-category-line-height: 1.1;
 
-        /* Segment list */
+        /* Active Split */
         --active-segment-background: #000;
         --active-segment-text-color: #fff;
 
+        /* Segment Layout */
         --segment-border: 2px solid #333;
         --segment-padding: 5px;
         --segment-name-width: 60%;
 
+        /* Delta */
         --split-delta-font-family: Monofonto;
         --split-delta-text-align: right;
 
+        /* Comparison */
         --split-comparison-font-family: Monofonto;
         --split-comparison-text-align: right;
     }

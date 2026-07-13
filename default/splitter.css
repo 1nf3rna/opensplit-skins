@@ -28,23 +28,23 @@
         color: var(--active-segment-text-color);
     }
 
-    #splitList table td {
+    #splitList td {
         border: var(--segment-border);
         border-left: 0;
         border-right: 0;
         padding: var(--segment-padding);
     }
 
-    #splitList .splitName {
+    .splitName {
         width: var(--segment-name-width);
     }
 
-    #splitList .splitDelta {
+    .splitDelta {
         text-align: var(--split-delta-text-align);
         font-family: var(--split-delta-font-family), monospace;
     }
 
-    #splitList .splitComparison {
+    .splitComparison {
         text-align: var(--split-comparison-text-align);
         font-family: var(--split-comparison-font-family), monospace;
     }
