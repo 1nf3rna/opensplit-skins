@@ -5,12 +5,9 @@
 
     #gameInfo {
         position: relative;
-
         background: var(--color-primary);
-
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-
         text-align: var(--gameinfo-text-align);
         font-family: var(--split-comparison-font-family), sans-serif;
     }
@@ -24,7 +21,6 @@
     #gameCategory {
         margin: var(--gameinfo-category-margin);
         padding-bottom: var(--gameinfo-category-bottom-space);
-
         font-size: var(--gameinfo-category-font-size);
         font-weight: var(--gameinfo-category-font-weight);
     }
@@ -41,19 +37,23 @@
     #splitList table td {
         border: var(--segment-border);
         padding: var(--segment-padding);
+        border-left: 0;
+        border-right: 0;
     }
 
     #attempts {
-        top: 50px;
-        right: auto;
-        left: 320px;
+        font-size: var(--gameinfo-category-font-size);
+        font-weight: var(--gameinfo-category-font-weight);
+        position: relative;
+        padding: 2px 0px;
+        left: -0.3em;
+        top: -1.2em; /* move up next to the category */
+        text-align: right;
     }
 
     .comparison-mode {
         background: #050b07;
-
         font-family: var(--split-comparison-font-family), monospace;
-
         opacity: 1;
     }
 
