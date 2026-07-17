@@ -1,26 +1,18 @@
 @layer skins {
-    #splitter {
-        flex-direction: var(--splitlist-direction);
-    }
-
-    #splitList {
-        flex-direction: var(--splitlist-direction);
-    }
-
     #gameInfo {
         position: relative;
 
         background-image:
-            url("./terra.png"), url("./ultros1.png"), var(--color-primary);
-
-        background-size:
-            contain,
-            contain,
-            100% 100%;
-
-        background-position: left, 150%, center;
+            url("./images/terra.png"), url("./images/ultros1.png"),
+            var(--color-primary);
 
         background-repeat: no-repeat;
+        background-size: contain, contain, cover;
+
+        background-position:
+            left center,
+            right center,
+            center;
 
         text-align: var(--gameinfo-text-align);
     }
@@ -38,15 +30,11 @@
         font-weight: var(--gameinfo-category-font-weight);
     }
 
-    #splitBody {
-        flex-direction: var(--splitlist-direction);
-    }
-
     #splitContainer {
-        background-image: url("./bg.png");
-        background-size: 100%;
+        background-image: url("./images/bg.png");
         background-repeat: no-repeat;
         background-position: center bottom;
+        background-size: cover;
     }
 
     #finalSegment {
@@ -60,26 +48,14 @@
 
     #splitList table td {
         border: var(--segment-border);
-        border-left: 0;
-        border-right: 0;
         padding: var(--segment-padding);
     }
 
-    #splitName {
-        width: var(--segment-name-width);
-    }
-
     .splitDelta {
-        text-align: var(--split-delta-text-align);
         font-family: var(--split-delta-font-family), monospace;
     }
 
     .splitComparison {
-        text-align: var(--split-comparison-text-align);
         font-family: var(--split-comparison-font-family), monospace;
-    }
-
-    button.collapseToggle {
-        margin-right: 6px;
     }
 }

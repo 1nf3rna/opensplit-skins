@@ -8,10 +8,10 @@
 
         /* game information section */
         --gameinfo-text-align: center;
-        --gameinfo-title-size: 20px;
+        --gameinfo-title-size: 18px;
         --gameinfo-title-font-weight: normal;
         --gameinfo-category-margin: 0;
-        --gameinfo-category-bottom-space: 2px;
+        --gameinfo-category-bottom-space: 0px;
         --gameinfo-category-font-size: 16px;
         --gameinfo-category-font-weight: normal;
 

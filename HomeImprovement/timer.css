@@ -1,10 +1,9 @@
 @layer skins {
     #timer-container {
-        padding: 10px;
-
+        padding: 5px;
         background-image: url("./images/tooltime.png");
         background-repeat: no-repeat;
-        background-position: left center;
+        background-position: left top;
     }
 
     #time-container {

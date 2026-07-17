@@ -1,16 +1,9 @@
 @layer skins {
-    #splitter {
-        flex-direction: var(--splitlist-direction);
-    }
-
-    #splitList {
-        flex-direction: var(--splitlist-direction);
-    }
-
     #gameInfo {
         position: relative;
 
         background: var(--color-primary);
+
         text-align: var(--gameinfo-text-align);
         font-family: var(--split-delta-font-family), monospace;
     }
@@ -23,7 +16,7 @@
 
     #gameCategory {
         position: relative;
-        top: -10px;
+        top: -4px;
 
         margin: var(--gameinfo-category-margin);
         padding-bottom: var(--gameinfo-category-bottom-space);
@@ -33,17 +26,13 @@
         font-weight: var(--gameinfo-category-font-weight);
     }
 
-    #splitBody {
-        flex-direction: var(--splitlist-direction);
-    }
-
     #splitContainer {
-        font-family: var(--split-delta-font-family), monospace;
-
         background-image: url("./images/pastelbackgroundedit.jpg");
-        background-size: 100%;
         background-repeat: no-repeat;
         background-position: 25% 25%;
+        background-size: cover;
+
+        font-family: var(--split-delta-font-family), monospace;
     }
 
     #finalSegment {
@@ -57,10 +46,8 @@
     }
 
     #splitList table td {
-        border: var(--segment-border);
-        border-left: 0;
-        border-right: 0;
         padding: var(--segment-padding);
+        border: var(--segment-border);
 
         color: var(--inactive-segment-text-color);
 
@@ -70,26 +57,30 @@
             2px 2px 2px #1a163e;
     }
 
-    #splitName {
-        width: var(--segment-name-width);
+    #attempts {
+        top: -21px;
+        right: auto;
+        left: 50px;
+    }
+
+    .comparison-mode {
+        position: absolute;
+        top: 66px;
+        left: 4px;
+
+        background: var(--color-primary);
+
+        font-family: var(--split-comparison-font-family), monospace;
+        font-size: 12px;
+
+        opacity: 1;
     }
 
     .splitDelta {
-        text-align: var(--split-delta-text-align);
         font-family: var(--split-delta-font-family), monospace;
     }
 
     .splitComparison {
-        text-align: var(--split-comparison-text-align);
         font-family: var(--split-comparison-font-family), monospace;
-    }
-
-    /* Move attempts back to match previous appearance */
-    #attempts {
-        top: -2px;
-    }
-
-    button.collapseToggle {
-        margin-right: 6px;
     }
 }

@@ -1,16 +1,9 @@
 @layer skins {
-    #splitter {
-        flex-direction: var(--splitlist-direction);
-    }
-
-    #splitList {
-        flex-direction: var(--splitlist-direction);
-    }
-
     #gameInfo {
         position: relative;
 
         background: var(--color-primary);
+
         text-align: var(--gameinfo-text-align);
     }
 
@@ -27,10 +20,6 @@
         font-weight: var(--gameinfo-category-font-weight);
     }
 
-    #splitBody {
-        flex-direction: var(--splitlist-direction);
-    }
-
     #finalSegment {
         background: var(--color-primary);
     }
@@ -42,26 +31,14 @@
 
     #splitList table td {
         border: var(--segment-border);
-        border-left: 0;
-        border-right: 0;
         padding: var(--segment-padding);
     }
 
-    #splitName {
-        width: var(--segment-name-width);
-    }
-
     .splitDelta {
-        text-align: var(--split-delta-text-align);
         font-family: var(--split-delta-font-family), monospace;
     }
 
     .splitComparison {
-        text-align: var(--split-comparison-text-align);
         font-family: var(--split-comparison-font-family), monospace;
-    }
-
-    button.collapseToggle {
-        margin-right: 6px;
     }
 }

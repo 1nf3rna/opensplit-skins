@@ -1,7 +1,6 @@
 @layer skins {
     #timer-container {
-        padding: 10px;
-
+        padding: 8px;
         background-color: #242b3d;
         background-image: url("./images/hollowknightrunright.gif");
         background-repeat: no-repeat;
@@ -10,12 +9,12 @@
     }
 
     #time-container {
-        font-family: "Trajan Pro", monospace;
+        font-family: var(--split-comparison-font-family);
         font-size: 50px;
     }
 
     .timer-ahead {
-        color: #00ff00;
+        color: greenyellow;
     }
 
     .timer-behind {

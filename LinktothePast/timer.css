@@ -1,25 +1,24 @@
 @layer skins {
     #timer-container {
-        padding: 10px;
+        padding: 2px;
+
+        background-color: #0c2716;
     }
 
     #time-container {
-        font-family: "Hylia Serif Beta", sans-serif;
+        font-family: var(--split-delta-font-family), monospace;
         font-size: 50px;
     }
 
     .timer-ahead {
-        /* Bright rupee-like green for being ahead */
         color: #6cf084;
     }
 
     .timer-behind {
-        /* Deep Ganon-esque maroon backdrop when behind */
         color: #f00;
     }
 
     .timer-gold {
-        /* Triforce gold for gold splits */
-        color: #f3d25b;
+        color: gold;
     }
 }

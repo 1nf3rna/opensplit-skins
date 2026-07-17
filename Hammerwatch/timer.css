@@ -2,7 +2,7 @@
     #timer-container {
         padding: 10px;
 
-        /* background-image: url("tooltime.png"); */
+        /* background-image: url("./tooltime.png"); */
         background-repeat: no-repeat;
         background-position: left center;
     }

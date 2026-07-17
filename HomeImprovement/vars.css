@@ -8,11 +8,11 @@
 
         /* game information section */
         --gameinfo-text-align: center;
-        --gameinfo-title-size: 20px;
+        --gameinfo-title-size: 18px;
         --gameinfo-title-font-weight: normal;
         --gameinfo-category-margin: 0;
-        --gameinfo-category-bottom-space: 10px;
-        --gameinfo-category-font-size: 20px;
+        --gameinfo-category-bottom-space: 6px;
+        --gameinfo-category-font-size: 18px;
         --gameinfo-category-font-weight: normal;
 
         /* segment list */

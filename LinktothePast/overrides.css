@@ -21,17 +21,6 @@
         box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
     }
 
-    #gameInfo,
-    #finalSegment {
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-
-    #finalSegment {
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
-
     #splitList table tr:nth-child(even):not(.selected) td {
         background-color: rgba(10, 26, 16, 0.9);
     }
