@@ -1,7 +1,6 @@
 @layer skins {
     #timer-container {
         padding: 10px;
-
         background-color: #141943;
         background-image: url("./images/samusrunning.gif");
         background-repeat: no-repeat;
@@ -10,7 +9,7 @@
     }
 
     #time-container {
-        font-family: "Serpentine", sans-serif;
+        font-family: var(--split-comparison-font-family), sans-serif;
         font-size: 50px;
     }
 
@@ -19,7 +18,7 @@
     }
 
     .timer-behind {
-        color: #f00;
+        color: #f83800;
     }
 
     .timer-gold {

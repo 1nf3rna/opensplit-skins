@@ -1,20 +1,15 @@
 @layer skins {
     #gameInfo {
         position: relative;
-
         background-image:
             url("./images/thimbo.png"), url("./images/timwave.png"),
             var(--color-primary);
-
+        background-size:
+            contain,
+            contain,
+            100% 100%;
+        background-position: left, 95%, center;
         background-repeat: no-repeat;
-
-        background-size: contain, contain, cover;
-
-        background-position:
-            left center,
-            right center,
-            center;
-
         text-align: var(--gameinfo-text-align);
     }
 
@@ -50,25 +45,34 @@
     #splitList table td {
         border: var(--segment-border);
         padding: var(--segment-padding);
+        border-left: 0;
+        border-right: 0;
     }
 
     #attempts {
         position: static;
         right: auto;
-
         font-size: 14px;
         font-weight: var(--gameinfo-category-font-weight);
     }
 
     .comparison-mode {
-        display: none;
+        display: relative;
     }
 
     .splitDelta {
+        text-align: var(--split-delta-text-align);
         font-family: var(--split-delta-font-family), monospace;
     }
 
     .splitComparison {
+        text-align: var(--split-comparison-text-align);
         font-family: var(--split-comparison-font-family), monospace;
     }
+
+    button.collapseToggle {
+        margin-right: 6px;
+        background-color: #282828;
+    }
+
 }
