@@ -72,7 +72,6 @@
 
     button.collapseToggle {
         margin-right: 6px;
-        background-color: #282828;
+        background-color: var(--background);
     }
-
 }
