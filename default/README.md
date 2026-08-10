@@ -1,8 +1,7 @@
 # default
 
 Author: 1nf3rna<br>
-Version: 2.0<br>
-Release date: 2026-07-01<br>
+Release date: 2026-08-09<br>
 
 Author: jeremysmitherman<br>
 Version: 1.0<br>

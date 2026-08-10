@@ -1,10 +1,10 @@
 @layer skins {
-    #gameInfo,
     #finalSegment {
         background: var(--color-primary);
     }
 
     #gameInfo {
+        background: var(--color-primary);
         text-align: var(--gameinfo-text-align);
     }
 
