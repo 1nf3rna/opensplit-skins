@@ -6,8 +6,21 @@
         /* Layout */
         --splitlist-direction: column;
 
+        /*
+         * Preferred splitter layout.
+         *
+         * Supported values:
+         *   vertical
+         *   horizontal
+         *
+         * The splitter may also be switched at runtime through
+         * the splitter context menu.
+         */
+        --splitter-layout: vertical;
+
         /* Game info */
         --gameinfo-text-align: center;
+
         /* Game info title */
         --gameinfo-title-size: 20px;
         --gameinfo-title-font-weight: normal;

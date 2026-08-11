@@ -1,4 +1,10 @@
 @layer skins {
+    /*
+     * ============================================================
+     * Common
+     * ============================================================
+     */
+
     #finalSegment {
         background: var(--color-primary);
     }
@@ -47,5 +53,34 @@
     .splitComparison {
         text-align: var(--split-comparison-text-align);
         font-family: var(--split-comparison-font-family), monospace;
+    }
+
+    /*
+     * ============================================================
+     * Horizontal layout
+     * ============================================================
+     */
+
+    #splitter[data-layout="horizontal"] .segmentIcon {
+        background: transparent;
+    }
+
+    #splitter[data-layout="horizontal"] .splitName {
+        width: 100%;
+    }
+
+    #splitter[data-layout="horizontal"] .splitDelta,
+    #splitter[data-layout="horizontal"] .splitComparison,
+    #splitter[data-layout="horizontal"] .splitTime {
+        text-align: center;
+    }
+
+    /*
+     * Keep the selected segment column visually consistent
+     * across all five rows.
+     */
+    #splitter[data-layout="horizontal"] #splitList table tr.selected {
+        background: var(--active-segment-background);
+        color: var(--active-segment-text-color);
     }
 }
