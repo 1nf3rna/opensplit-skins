@@ -1,5 +1,8 @@
 # Super Metroid
 
+Author: 1nf3rna<br>
+Release date: 2026-08-11<br>
+
 Author: SensaiOpti <br>
 Version: 1.25 <br>
 Release date: 2026-06-23 <br>
@@ -10,5 +13,7 @@ The font used is [Serpentine](https://www.fontshut.com/serpentine-font-family/),
 ![SuperMetroidExample.png](SuperMetroidExample.png)
 
 ## Changelog
+
 ### 1.25
+
 Updated for recent changes in OpenSplit CSS interpretation.

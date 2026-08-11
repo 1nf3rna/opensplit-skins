@@ -1,5 +1,8 @@
 # Final Fantasy 6
 
+Author: 1nf3rna<br>
+Release date: 2026-08-11<br>
+
 Author: jeremysmitherman<br>
 Version: 1.0<br>
 Release date: 2026-06-23<br>

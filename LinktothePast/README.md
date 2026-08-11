@@ -1,5 +1,8 @@
 # The Legend of Zelda: A Link to the Past
 
+Author: 1nf3rna<br>
+Release date: 2026-08-11<br>
+
 Author: SensaiOpti <br>
 Version: 1.25 <br>
 Release date: 2026-06-23 <br>
@@ -10,5 +13,7 @@ Font is the excellent [Hylia Serif](https://artsyomni.com/hyliaserif), though yo
 ![LTTPExample.png](LTTPExample.png)
 
 ## Changelog
+
 ### 1.25
+
 Updated for recent changes in OpenSplit CSS interpretation.

@@ -1,5 +1,8 @@
 # Home Improvement: Power Tool Pursuit
 
+Author: 1nf3rna<br>
+Release date: 2026-08-11<br>
+
 Author: SensaiOpti <br>
 Version: 1.25 <br>
 Release date: 2026-06-23 <br>
@@ -10,5 +13,7 @@ The images contained within are stupid jokes and memes made by Twitch viewers. T
 ![HomeImprovementExample.png](HomeImprovementExample.png)
 
 ## Changelog
+
 ### 1.25
+
 Updated for recent changes in OpenSplit CSS interpretation.
