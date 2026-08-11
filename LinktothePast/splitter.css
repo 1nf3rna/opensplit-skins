@@ -1,14 +1,56 @@
 @layer skins {
+    /*
+     * ============================================================
+     * Split list
+     * ============================================================
+     */
     #splitList {
         font-family: var(--split-comparison-font-family), sans-serif;
     }
 
+    #splitList table tr.selected {
+        background: var(--active-segment-background);
+        color: var(--active-segment-text-color);
+    }
+
+    /*
+     * Segment body styling belongs to the split list.
+     *
+     * This remains compatible with both layouts:
+     * - vertical: each row is a segment
+     * - horizontal: each row becomes a segment column
+     */
+    #splitList table td {
+        border: var(--segment-border);
+        border-left: 0;
+        border-right: 0;
+
+        padding: var(--segment-padding);
+    }
+
+    .splitDelta {
+        font-family: var(--split-delta-font-family), monospace;
+    }
+
+    .splitComparison {
+        font-family: var(--split-comparison-font-family), monospace;
+    }
+
+    /*
+     * ============================================================
+     * Game information
+     * ============================================================
+     */
     #gameInfo {
         position: relative;
+
         background: var(--color-primary);
+
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
+
         text-align: var(--gameinfo-text-align);
+
         font-family: var(--split-comparison-font-family), sans-serif;
     }
 
@@ -21,47 +63,44 @@
     #gameCategory {
         margin: var(--gameinfo-category-margin);
         padding-bottom: var(--gameinfo-category-bottom-space);
+
         font-size: var(--gameinfo-category-font-size);
         font-weight: var(--gameinfo-category-font-weight);
-    }
-
-    #finalSegment {
-        background: var(--color-primary);
-    }
-
-    #splitList table tr.selected {
-        background: var(--active-segment-background);
-        color: var(--active-segment-text-color);
-    }
-
-    #splitList table td {
-        border: var(--segment-border);
-        padding: var(--segment-padding);
-        border-left: 0;
-        border-right: 0;
     }
 
     #attempts {
         font-size: var(--gameinfo-category-font-size);
         font-weight: var(--gameinfo-category-font-weight);
+
         position: relative;
-        padding: 2px 0px;
+
+        padding: 2px 0;
+
         left: -0.3em;
-        top: -1.2em; /* move up next to the category */
+        top: -1.2em;
+
         text-align: right;
     }
 
+    /*
+     * ============================================================
+     * Final segment
+     * ============================================================
+     */
+    #finalSegment {
+        background: var(--color-primary);
+    }
+
+    /*
+     * ============================================================
+     * Comparison mode
+     * ============================================================
+     */
     .comparison-mode {
         background: #050b07;
+
         font-family: var(--split-comparison-font-family), monospace;
+
         opacity: 1;
-    }
-
-    .splitDelta {
-        font-family: var(--split-delta-font-family), monospace;
-    }
-
-    .splitComparison {
-        font-family: var(--split-comparison-font-family), monospace;
     }
 }

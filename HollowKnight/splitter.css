@@ -1,7 +1,15 @@
 @layer skins {
+    /*
+     * ============================================================
+     * Game info
+     * ============================================================
+     */
+
     #gameInfo {
         position: relative;
+
         background: var(--color-primary);
+
         text-align: var(--gameinfo-text-align);
         font-family: var(--split-delta-font-family), monospace;
     }
@@ -15,11 +23,26 @@
     #gameCategory {
         position: relative;
         top: -4px;
+
         margin: var(--gameinfo-category-margin);
         padding-bottom: var(--gameinfo-category-bottom-space);
+
         font-family: var(--split-delta-font-family), monospace;
         font-size: var(--gameinfo-category-font-size);
         font-weight: var(--gameinfo-category-font-weight);
+    }
+
+    /*
+     * ============================================================
+     * Split list
+     * ============================================================
+     */
+
+    #splitList {
+        min-width: 0;
+        min-height: 0;
+
+        font-family: var(--split-delta-font-family), monospace;
     }
 
     #splitContainer {
@@ -27,11 +50,7 @@
         background-repeat: no-repeat;
         background-position: 25% 25%;
         background-size: cover;
-        font-family: var(--split-delta-font-family), monospace;
-    }
 
-    #finalSegment {
-        background: var(--color-primary);
         font-family: var(--split-delta-font-family), monospace;
     }
 
@@ -42,33 +61,146 @@
 
     #splitList table td {
         padding: var(--segment-padding);
+
         border: var(--segment-border);
         border-left: 0;
         border-right: 0;
+
         color: var(--inactive-segment-text-color);
+
         text-shadow:
             1px 1px 0 #1a163e,
             1px 1px 1px #1a163e,
             2px 2px 2px #1a163e;
     }
 
+    /*
+     * ============================================================
+     * Horizontal layout
+     * ============================================================
+     *
+     * The base splitter owns the column layout. These rules only
+     * adapt the Hollow Knight skin's appearance to that layout.
+     */
+
+    #splitter[data-layout="horizontal"] #splitList {
+        background: var(--color-primary);
+    }
+
+    #splitter[data-layout="horizontal"] #splitContainer {
+        background-image: url("./images/pastelbackgroundedit.jpg");
+        background-repeat: no-repeat;
+        background-position: 25% 25%;
+        background-size: cover;
+    }
+
+    #splitter[data-layout="horizontal"] #splitList table tr {
+        border-left: var(--segment-border);
+        border-right: var(--segment-border);
+    }
+
+    #splitter[data-layout="horizontal"] #splitList table td {
+        border: var(--segment-border);
+        padding: var(--segment-padding);
+
+        text-shadow:
+            1px 1px 0 #1a163e,
+            1px 1px 1px #1a163e,
+            2px 2px 2px #1a163e;
+    }
+
+    /*
+     * ============================================================
+     * Final segment
+     * ============================================================
+     */
+
+    #finalSegment {
+        background: var(--color-primary);
+
+        font-family: var(--split-delta-font-family), monospace;
+    }
+
+    #splitter[data-layout="horizontal"] #finalSegment {
+        background: var(--color-primary);
+
+        font-family: var(--split-delta-font-family), monospace;
+    }
+
+    #splitter[data-layout="horizontal"] #finalSegment table td {
+        padding: var(--segment-padding);
+
+        border: var(--segment-border);
+
+        color: var(--inactive-segment-text-color);
+
+        text-shadow:
+            1px 1px 0 #1a163e,
+            1px 1px 1px #1a163e,
+            2px 2px 2px #1a163e;
+    }
+
+    #splitter[data-layout="horizontal"] #finalSegment .selected {
+        background: var(--active-segment-background);
+        color: var(--active-segment-text-color);
+    }
+
+    /*
+     * ============================================================
+     * Attempts
+     * ============================================================
+     */
+
     #attempts {
         position: relative;
-        top: -1.6em; /* move up next to the category */
+        top: -1.6em;
+
         margin-left: 10.5em;
+
         display: inline-block;
+
         text-align: center;
     }
 
+    /*
+     * ============================================================
+     * Comparison
+     * ============================================================
+     */
+
     .comparison-mode {
         background-color: var(--color-primary);
+
         font-family: var(--split-comparison-font-family), monospace;
         font-size: 12px;
+
         opacity: 1;
+
         position: absolute;
         top: 5.7em;
+
         margin-left: 0.3em;
     }
+
+    /*
+     * In horizontal layout the application positions the
+     * comparison panel as a grid area. Do not keep the vertical
+     * absolute positioning there.
+     */
+
+    #splitter[data-layout="horizontal"] .comparison-mode {
+        position: static;
+
+        margin-left: 0;
+
+        font-size: 12px;
+    }
+
+    /*
+     * ============================================================
+     * Timing columns
+     * ============================================================
+     */
 
     .splitDelta {
         font-family: var(--split-delta-font-family), monospace;

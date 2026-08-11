@@ -1,4 +1,10 @@
 @layer skins {
+    /*
+     * ============================================================
+     * Game info
+     * ============================================================
+     */
+
     #gameInfo {
         position: relative;
 
@@ -20,15 +26,22 @@
         font-weight: var(--gameinfo-category-font-weight);
     }
 
+    /*
+     * ============================================================
+     * Split list
+     * ============================================================
+     */
+
+    #splitList {
+        min-width: 0;
+        min-height: 0;
+    }
+
     #splitContainer {
         background-image: url("./images/base.jpg");
         background-repeat: no-repeat;
         background-position: center bottom;
         background-size: cover;
-    }
-
-    #finalSegment {
-        background: var(--color-primary);
     }
 
     #splitList table tr.selected {
@@ -42,10 +55,67 @@
     }
 
     .splitDelta {
-        font-family: var(--split-delta-font-family), monospace;
+        font-family: var(--split-delta-font-family);
+        text-align: var(--split-delta-text-align);
     }
 
     .splitComparison {
-        font-family: var(--split-comparison-font-family), monospace;
+        font-family: var(--split-comparison-font-family);
+        text-align: var(--split-comparison-text-align);
+    }
+
+    /*
+     * ============================================================
+     * Horizontal layout
+     * ============================================================
+     *
+     * The application owns the horizontal column layout.
+     * The skin only supplies the visual treatment for those
+     * columns and cells.
+     */
+
+    #splitter[data-layout="horizontal"] #splitList {
+        background: var(--color-primary);
+    }
+
+    #splitter[data-layout="horizontal"] #splitContainer {
+        background-image: url("./images/base.jpg");
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: cover;
+    }
+
+    #splitter[data-layout="horizontal"] #splitList table tr {
+        border-left: var(--segment-border);
+        border-right: var(--segment-border);
+    }
+
+    #splitter[data-layout="horizontal"] #splitList table td {
+        border: var(--segment-border);
+        padding: var(--segment-padding);
+    }
+
+    /*
+     * ============================================================
+     * Final segment
+     * ============================================================
+     */
+
+    #finalSegment {
+        background: var(--color-primary);
+    }
+
+    #splitter[data-layout="horizontal"] #finalSegment {
+        background: var(--color-primary);
+    }
+
+    #splitter[data-layout="horizontal"] #finalSegment table td {
+        border: var(--segment-border);
+        padding: var(--segment-padding);
+    }
+
+    #splitter[data-layout="horizontal"] #finalSegment .selected {
+        background: var(--active-segment-background);
+        color: var(--active-segment-text-color);
     }
 }

@@ -4,6 +4,7 @@
         --color-primary: linear-gradient(to bottom, #144d5e, #141440);
 
         /* Layout */
+        --splitter-layout: vertical;
         --splitlist-direction: column;
 
         /* Game information */

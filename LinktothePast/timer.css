@@ -1,11 +1,9 @@
 @layer skins {
-    #timer-container {
+    #time-container {
         padding: 2px;
 
         background-color: #0c2716;
-    }
 
-    #time-container {
         font-family: var(--split-delta-font-family), monospace;
         font-size: 50px;
     }

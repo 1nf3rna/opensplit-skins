@@ -2,10 +2,14 @@
     :root {
     }
 
-    /* When the timer is showing a gold split, play samusrunningfast.gif in the title area */
-    body:has(.timer-gold) #timer-container {
+    /*
+     * When the timer is showing a gold split, replace the normal
+     * running animation with the fast-running animation.
+     */
+    body:has(.timer-gold) #time-container {
         background-image: url("./images/samusrunningfast.gif");
-        background-size: contain, contain;
-        background-position: left, left;
+        background-size: contain;
+        background-position: left center;
+        background-repeat: no-repeat;
     }
 }

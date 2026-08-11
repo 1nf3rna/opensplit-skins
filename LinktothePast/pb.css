@@ -5,8 +5,8 @@
         the "pb" class is added throughout the splitter.
     */
 
-    #gameInfo.pb,
-    #finalSegment.pb {
+    #gameInfo.complete.pb,
+    #finalSegment.complete.pb {
         background-color: #184a2c;
 
         background-image:

@@ -1,13 +1,11 @@
 @layer skins {
-    #timer-container {
+    #time-container {
         padding: 10px;
 
         background-image: url("./images/chocoborace.png?v=2");
         background-repeat: no-repeat;
         background-position: left center;
-    }
 
-    #time-container {
         font-family: "Monofonto", sans-serif;
         font-size: 50px;
     }

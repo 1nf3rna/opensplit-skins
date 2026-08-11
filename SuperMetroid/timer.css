@@ -1,14 +1,22 @@
 @layer skins {
-    #timer-container {
+    /*
+     * ============================================================
+     * Timer
+     * ============================================================
+     *
+     * Timer-specific visual styling belongs on #time-container.
+     * The base splitter controls the timer's placement.
+     */
+
+    #time-container {
         padding: 10px;
+
         background-color: #141943;
         background-image: url("./images/samusrunning.gif");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: left center;
-    }
 
-    #time-container {
         font-family: var(--split-comparison-font-family), sans-serif;
         font-size: 50px;
     }

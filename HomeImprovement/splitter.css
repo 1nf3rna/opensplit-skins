@@ -1,15 +1,25 @@
 @layer skins {
+    /*
+     * ============================================================
+     * Game information
+     * ============================================================
+     */
     #gameInfo {
         position: relative;
+
         background-image:
             url("./images/thimbo.png"), url("./images/timwave.png"),
             var(--color-primary);
+
         background-size:
             contain,
             contain,
             100% 100%;
+
         background-position: left, 95%, center;
+
         background-repeat: no-repeat;
+
         text-align: var(--gameinfo-text-align);
     }
 
@@ -26,15 +36,29 @@
         font-weight: var(--gameinfo-category-font-weight);
     }
 
-    #splitContainer {
+    #attempts {
+        position: static;
+
+        right: auto;
+
+        font-size: 14px;
+        font-weight: var(--gameinfo-category-font-weight);
+    }
+
+    /*
+     * ============================================================
+     * Split list
+     * ============================================================
+     *
+     * The runtime controls whether the split list is vertical or
+     * horizontal. Skin styling is therefore applied to the list
+     * itself rather than assuming a particular layout.
+     */
+    #splitList {
         background-image: url("./images/jinxtool.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-    }
-
-    #finalSegment {
-        background: var(--color-primary);
     }
 
     #splitList table tr.selected {
@@ -42,22 +66,20 @@
         color: var(--active-segment-text-color);
     }
 
+    /*
+     * Segment body styling.
+     *
+     * In vertical layout these are normal table cells.
+     * In horizontal layout the runtime transforms each row into
+     * a segment column, so the same cell styling applies to the
+     * individual cells within that column.
+     */
     #splitList table td {
         border: var(--segment-border);
-        padding: var(--segment-padding);
         border-left: 0;
         border-right: 0;
-    }
 
-    #attempts {
-        position: static;
-        right: auto;
-        font-size: 14px;
-        font-weight: var(--gameinfo-category-font-weight);
-    }
-
-    .comparison-mode {
-        display: relative;
+        padding: var(--segment-padding);
     }
 
     .splitDelta {
@@ -70,8 +92,32 @@
         font-family: var(--split-comparison-font-family), monospace;
     }
 
+    /*
+     * ============================================================
+     * Final segment
+     * ============================================================
+     */
+    #finalSegment {
+        background: var(--color-primary);
+    }
+
+    /*
+     * ============================================================
+     * Parent segments
+     * ============================================================
+     */
     button.collapseToggle {
         margin-right: 6px;
+
         background-color: var(--background);
+    }
+
+    /*
+     * ============================================================
+     * Comparison mode
+     * ============================================================
+     */
+    .comparison-mode {
+        display: relative;
     }
 }

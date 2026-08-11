@@ -1,4 +1,10 @@
 @layer skins {
+    /*
+     * ============================================================
+     * Game info
+     * ============================================================
+     */
+
     #gameInfo {
         position: relative;
 
@@ -30,15 +36,22 @@
         font-weight: var(--gameinfo-category-font-weight);
     }
 
+    /*
+     * ============================================================
+     * Split list
+     * ============================================================
+     */
+
+    #splitList {
+        min-width: 0;
+        min-height: 0;
+    }
+
     #splitContainer {
         background-image: url("./images/bg.png");
         background-repeat: no-repeat;
         background-position: center bottom;
         background-size: cover;
-    }
-
-    #finalSegment {
-        background: var(--color-primary);
     }
 
     #splitList table tr.selected {
@@ -57,5 +70,65 @@
 
     .splitComparison {
         font-family: var(--split-comparison-font-family), monospace;
+    }
+
+    /*
+     * ============================================================
+     * Horizontal layout
+     * ============================================================
+     *
+     * The base splitter converts each segment <tr> into a
+     * vertical segment column. Keep the skin-specific appearance
+     * compatible with that structure.
+     */
+
+    #splitter[data-layout="horizontal"] #splitList {
+        background: var(--color-primary);
+    }
+
+    #splitter[data-layout="horizontal"] #splitContainer {
+        background-image: url("./images/bg.png");
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: cover;
+    }
+
+    #splitter[data-layout="horizontal"] #splitList table tr {
+        border-left: var(--segment-border);
+        border-right: var(--segment-border);
+    }
+
+    #splitter[data-layout="horizontal"] #splitList table td {
+        border: var(--segment-border);
+        padding: var(--segment-padding);
+    }
+
+    /*
+     * ============================================================
+     * Final segment
+     * ============================================================
+     */
+
+    #finalSegment {
+        background: var(--color-primary);
+    }
+
+    #splitter[data-layout="horizontal"] #finalSegment {
+        background: var(--color-primary);
+    }
+
+    #splitter[data-layout="horizontal"] #finalSegment table td {
+        border: var(--segment-border);
+        padding: var(--segment-padding);
+    }
+
+    /*
+     * Match the selected final segment styling used by the
+     * regular split list.
+     */
+
+    #splitter[data-layout="horizontal"] #finalSegment .selected {
+        background: var(--active-segment-background);
+        color: var(--active-segment-text-color);
     }
 }

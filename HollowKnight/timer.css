@@ -1,14 +1,13 @@
 @layer skins {
-    #timer-container {
+    #time-container {
         padding: 8px;
+
         background-color: #242b3d;
         background-image: url("./images/hollowknightrunright.gif");
         background-repeat: no-repeat;
         background-size: 30%;
         background-position: left center;
-    }
 
-    #time-container {
         font-family: var(--split-comparison-font-family);
         font-size: 50px;
     }

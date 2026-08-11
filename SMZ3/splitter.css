@@ -1,4 +1,9 @@
 @layer skins {
+    /*
+     * ============================================================
+     * Game information
+     * ============================================================
+     */
     #gameInfo {
         position: relative;
 
@@ -20,7 +25,20 @@
         font-weight: var(--gameinfo-category-font-weight);
     }
 
-    #finalSegment {
+    /*
+     * ============================================================
+     * Split list
+     * ============================================================
+     *
+     * These styles apply to the split list in both layouts.
+     *
+     * Vertical layout:
+     *   each row is a segment
+     *
+     * Horizontal layout:
+     *   each row is transformed into a segment column
+     */
+    #splitList {
         background: var(--color-primary);
     }
 
@@ -31,6 +49,7 @@
 
     #splitList table td {
         border: var(--segment-border);
+
         padding: var(--segment-padding);
     }
 
@@ -40,5 +59,14 @@
 
     .splitComparison {
         font-family: var(--split-comparison-font-family), monospace;
+    }
+
+    /*
+     * ============================================================
+     * Final segment
+     * ============================================================
+     */
+    #finalSegment {
+        background: var(--color-primary);
     }
 }

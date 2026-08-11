@@ -3,7 +3,8 @@
         /* colors */
         --color-primary: linear-gradient(to bottom, #4884bb, #053768);
 
-        /* segment container */
+        /* Layout */
+        --splitter-layout: vertical;
         --splitlist-direction: column;
 
         /* game information section */
