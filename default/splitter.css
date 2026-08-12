@@ -35,9 +35,8 @@
     }
 
     #splitList td {
-        border: var(--segment-border);
-        border-left: 0;
-        border-right: 0;
+        border-top: var(--segment-border);
+        border-bottom: var(--segment-border);
         padding: var(--segment-padding);
     }
 
@@ -59,6 +58,189 @@
      * ============================================================
      * Horizontal layout
      * ============================================================
+     *
+     *  ┌────────┬──────────┬─────────┬──────────────────────┐
+     *  │        │          │         │ Timer       WR       │
+     *  │ Game   │ Segments │ Final   ├──────────────────────┤
+     *  │ Info   │          │ Segment │ Comparison           │
+     *  │        │          │         │                      │
+     *  └────────┴──────────┴─────────┴──────────────────────┘
+     */
+
+    #splitter[data-layout="horizontal"] {
+        --horizontal-game-info-width: 150px;
+        --horizontal-final-width: 150px;
+        --horizontal-info-width: 330px;
+
+        display: flex;
+        flex-direction: row;
+
+        min-width: 0;
+        min-height: 0;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * Game info
+     * ------------------------------------------------------------
+     */
+
+    #splitter[data-layout="horizontal"] #gameInfo {
+        flex: 0 0 var(--horizontal-game-info-width);
+
+        width: var(--horizontal-game-info-width);
+        min-width: var(--horizontal-game-info-width);
+        min-height: 0;
+
+        overflow: hidden;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * Split list
+     * ------------------------------------------------------------
+     */
+
+    #splitter[data-layout="horizontal"] #splitList {
+        flex: 1 1 auto;
+
+        min-width: 0;
+        min-height: 0;
+
+        overflow: hidden;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * Final segment
+     * ------------------------------------------------------------
+     */
+
+    #splitter[data-layout="horizontal"] #finalSegment {
+        flex: 0 0 var(--horizontal-final-width);
+
+        width: var(--horizontal-final-width);
+        min-width: var(--horizontal-final-width);
+        min-height: 0;
+    }
+
+    /*
+     * ============================================================
+     * Horizontal splitter info
+     * ============================================================
+     *
+     * The wrapper is allowed to shrink.
+     *
+     * Its width is determined by its contents instead of being
+     * permanently fixed at 330px.
+     *
+     * With WR:
+     *
+     *     Timer | WR
+     *     -----------
+     *     Comparison
+     *
+     * Without WR:
+     *
+     *     Timer
+     *     -----------
+     *     Comparison
+     */
+
+    #splitter[data-layout="horizontal"] #splitterInfo {
+        display: flex;
+
+        flex: 0 1 auto;
+
+        width: auto;
+        min-width: 0;
+        min-height: 0;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        align-content: stretch;
+        align-items: stretch;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * Timer
+     * ------------------------------------------------------------
+     *
+     * The timer establishes the minimum useful width of the
+     * information area.
+     */
+
+    #splitter[data-layout="horizontal"] #time-container {
+        order: 1;
+
+        flex: 1 1 auto;
+
+        width: auto;
+        min-width: 120px;
+        min-height: 0;
+
+        padding: 8px;
+
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * World record
+     * ------------------------------------------------------------
+     *
+     * WR contributes its own width when visible.
+     */
+
+    #splitter[data-layout="horizontal"] #world-record {
+        order: 2;
+
+        flex: 0 1 auto;
+
+        width: auto;
+        min-width: 100px;
+        min-height: 0;
+
+        padding: 8px;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * Comparison
+     * ------------------------------------------------------------
+     *
+     * The comparison spans the complete width of the wrapper.
+     */
+
+    #splitter[data-layout="horizontal"] .comparison-mode {
+        order: 3;
+
+        flex: 1 0 100%;
+
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+
+        padding: 8px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    /*
+     * ============================================================
+     * Horizontal segment styling
+     * ============================================================
      */
 
     #splitter[data-layout="horizontal"] .segmentIcon {
@@ -73,14 +255,5 @@
     #splitter[data-layout="horizontal"] .splitComparison,
     #splitter[data-layout="horizontal"] .splitTime {
         text-align: center;
-    }
-
-    /*
-     * Keep the selected segment column visually consistent
-     * across all five rows.
-     */
-    #splitter[data-layout="horizontal"] #splitList table tr.selected {
-        background: var(--active-segment-background);
-        color: var(--active-segment-text-color);
     }
 }

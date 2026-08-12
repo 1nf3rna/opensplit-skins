@@ -62,9 +62,8 @@
     #splitList table td {
         padding: var(--segment-padding);
 
-        border: var(--segment-border);
-        border-left: 0;
-        border-right: 0;
+        border-top: var(--segment-border);
+        border-bottom: var(--segment-border);
 
         color: var(--inactive-segment-text-color);
 
@@ -175,11 +174,6 @@
         font-size: 12px;
 
         opacity: 1;
-
-        position: absolute;
-        top: 5.7em;
-
-        margin-left: 0.3em;
     }
 
     /*
@@ -194,6 +188,75 @@
         margin-left: 0;
 
         font-size: 12px;
+    }
+
+    /*
+     * ============================================================
+     * Horizontal splitter info
+     * ============================================================
+     */
+
+    #splitter[data-layout="horizontal"] #splitterInfo {
+        display: flex;
+
+        flex: 0 1 auto;
+
+        width: auto;
+        min-width: 0;
+        min-height: 0;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        align-content: stretch;
+        align-items: stretch;
+    }
+
+    #splitter[data-layout="horizontal"] #time-container {
+        order: 1;
+
+        flex: 1 1 auto;
+
+        width: auto;
+        min-width: 120px;
+        min-height: 0;
+
+        padding: 8px;
+
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    #splitter[data-layout="horizontal"] #world-record {
+        order: 2;
+
+        flex: 0 1 auto;
+
+        width: auto;
+        min-width: 100px;
+        min-height: 0;
+
+        padding: 8px;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    #splitter[data-layout="horizontal"] .comparison-mode {
+        order: 3;
+
+        flex: 1 0 100%;
+
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
     }
 
     /*
