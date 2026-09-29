@@ -96,7 +96,7 @@
      */
 
     #splitter[data-layout="horizontal"] #splitList {
-        min-width: var(--splitter-segment-row-min-width);
+        min-width: min-content;
         min-height: 0;
     }
 
