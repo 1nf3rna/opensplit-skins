@@ -126,68 +126,47 @@
      * ============================================================
      */
 
-    #splitter[data-layout="horizontal"] #splitterInfo {
+    /* Match the measured component layout in vertical view. */
+    #splitter[data-layout="vertical"] #splitterInfo {
         display: flex;
-
-        flex: 0 1 auto;
-
-        width: auto;
+        flex-direction: column;
         min-width: 0;
-        min-height: 0;
-
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        align-content: stretch;
-        align-items: stretch;
+        box-sizing: border-box;
     }
 
-    #splitter[data-layout="horizontal"] #time-container {
-        order: 1;
-
-        flex: 1 1 auto;
-
-        width: auto;
-        min-width: 120px;
+    /* Keep horizontal splitter info in a single measured grid column. */
+    #splitter[data-layout="horizontal"] #splitterInfo {
+        display: grid;
+        min-width: 0;
         min-height: 0;
+        box-sizing: border-box;
+    }
 
-        padding: 8px;
+    #splitter[data-layout="horizontal"] #splitterInfo #world-record {
+        grid-column: 1;
+        grid-row: 1;
+        min-width: 0;
+        box-sizing: border-box;
+    }
 
+    #splitter[data-layout="horizontal"] #splitterInfo #time-container {
+        grid-column: 1;
+        grid-row: 2;
+        min-width: 0;
+        box-sizing: border-box;
+        display: flex;
         align-items: center;
         justify-content: flex-end;
     }
 
-    #splitter[data-layout="horizontal"] #world-record {
-        order: 2;
-
-        flex: 0 1 auto;
-
-        width: auto;
-        min-width: 100px;
-        min-height: 0;
-
-        padding: 8px;
-
-        align-items: center;
-        justify-content: center;
-    }
-
-    #splitter[data-layout="horizontal"] .comparison-mode {
-        order: 3;
-
-        flex: 1 0 100%;
-
-        width: 100%;
+    #splitter[data-layout="horizontal"] #splitterInfo .comparison-mode {
+        grid-column: 1;
+        grid-row: 3;
         min-width: 0;
-        min-height: 0;
-
-        padding: 8px;
-
+        box-sizing: border-box;
         display: flex;
-
         align-items: center;
         justify-content: center;
-
         text-align: center;
     }
 }

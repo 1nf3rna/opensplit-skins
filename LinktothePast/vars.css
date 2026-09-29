@@ -26,5 +26,68 @@
         /* Fonts */
         --split-delta-font-family: "Hylia Serif Beta";
         --split-comparison-font-family: "Hylia Serif Beta";
+
+        /* Effective minimum sizes for both splitter layouts. */
+        --splitter-game-title-min-width: 115px;
+        --splitter-game-title-min-height: 28px;
+        --splitter-game-category-min-width: 100px;
+        --splitter-game-category-min-height: 26px;
+        --splitter-game-variable-min-width: 100px;
+        --splitter-game-variable-min-height: 20px;
+        --splitter-attempts-min-width: 40px;
+        --splitter-attempts-min-height: 20px;
+        --splitter-game-info-padding-width: 32px;
+        --splitter-game-info-padding-height: 24px;
+
+        --splitter-segment-icon-min-width: 25px;
+        --splitter-segment-icon-min-height: 25px;
+        --splitter-segment-name-min-width: 70px;
+        --splitter-segment-name-min-height: 40px;
+        --splitter-segment-delta-min-width: 70px;
+        --splitter-segment-delta-min-height: 32px;
+        --splitter-segment-comparison-min-width: 70px;
+        --splitter-segment-comparison-min-height: 32px;
+        --splitter-segment-time-min-width: 70px;
+        --splitter-segment-time-min-height: 32px;
+
+        --splitter-comparison-min-width: 200px;
+        --splitter-comparison-min-height: 30px;
+
+        --splitter-timer-sign-min-width: 25px;
+        --splitter-timer-sign-min-height: 60px;
+        --splitter-timer-hours-min-width: 25px;
+        --splitter-timer-hours-min-height: 60px;
+        --splitter-timer-separator-hours-minutes-min-width: 25px;
+        --splitter-timer-separator-hours-minutes-min-height: 60px;
+        --splitter-timer-minutes-min-width: 25px;
+        --splitter-timer-minutes-min-height: 60px;
+        --splitter-timer-separator-minutes-seconds-min-width: 25px;
+        --splitter-timer-separator-minutes-seconds-min-height: 60px;
+        --splitter-timer-seconds-min-width: 25px;
+        --splitter-timer-seconds-min-height: 60px;
+        --splitter-timer-separator-seconds-centis-min-width: 25px;
+        --splitter-timer-separator-seconds-centis-min-height: 60px;
+        --splitter-timer-centis-min-width: 42px;
+        --splitter-timer-centis-min-height: 60px;
+
+        --splitter-world-record-label-min-width: 20px;
+        --splitter-world-record-label-min-height: 20px;
+        --splitter-world-record-names-min-width: 20px;
+        --splitter-world-record-names-min-height: 20px;
+        --splitter-world-record-rt-label-min-width: 20px;
+        --splitter-world-record-rt-label-min-height: 20px;
+        --splitter-world-record-rt-time-min-width: 20px;
+        --splitter-world-record-rt-time-min-height: 20px;
+        --splitter-world-record-rt-centiseconds-min-width: 20px;
+        --splitter-world-record-rt-centiseconds-min-height: 20px;
+        --splitter-world-record-igt-label-min-width: 20px;
+        --splitter-world-record-igt-label-min-height: 20px;
+        --splitter-world-record-igt-time-min-width: 20px;
+        --splitter-world-record-igt-time-min-height: 20px;
+        --splitter-world-record-igt-centiseconds-min-width: 20px;
+        --splitter-world-record-igt-centiseconds-min-height: 20px;
+
+        --splitter-info-padding-width: 16px;
+        --splitter-info-padding-height: 16px;
     }
 }
