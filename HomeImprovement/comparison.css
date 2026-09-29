@@ -1,0 +1,17 @@
+@layer skins {
+    .splitDelta {
+        text-align: var(--split-delta-text-align);
+        font-family: var(--split-delta-font-family), monospace;
+    }
+
+    .splitComparison {
+        text-align: var(--split-comparison-text-align);
+        font-family: var(--split-comparison-font-family), monospace;
+    }
+
+    .comparison-mode {
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+}

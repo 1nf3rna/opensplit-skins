@@ -1,0 +1,36 @@
+@layer skins {
+    #world-record {
+        box-sizing: border-box;
+    }
+
+    #splitter[data-layout="vertical"] #world-record-players {
+    }
+
+    #splitter[data-layout="vertical"] #world-record-label {
+        /*min-width: var(--splitter-world-record-label-min-width);*/
+        /*min-height: var(--splitter-world-record-label-min-height);*/
+    }
+
+    #splitter[data-layout="vertical"] #world-record-names {
+        /*min-width: var(--splitter-world-record-names-min-width);*/
+        /*min-height: var(--splitter-world-record-names-min-height);*/
+    }
+
+    #splitter[data-layout="vertical"] #world-record-real-time {
+    }
+
+    #splitter[data-layout="vertical"] #world-record-rt-label {
+        /*min-width: var(--splitter-world-record-rt-label-min-width);*/
+        /*min-height: var(--splitter-world-record-rt-label-min-height);*/
+    }
+
+    #splitter[data-layout="vertical"] #world-record-rt-time {
+        /*min-width: var(--splitter-world-record-rt-time-min-width);*/
+        /*min-height: var(--splitter-world-record-rt-time-min-height);*/
+    }
+
+    #splitter[data-layout="vertical"] #world-record-rt-centiseconds {
+        /*min-width: var(--splitter-world-record-rt-centiseconds-min-width);*/
+        /*min-height: var(--splitter-world-record-rt-centiseconds-min-height);*/
+    }
+}

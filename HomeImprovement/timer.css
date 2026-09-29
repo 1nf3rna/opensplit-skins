@@ -1,13 +1,58 @@
 @layer skins {
+    #splitterInfo {
+        background-image: url("./images/tooltime.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left top;
+    }
+
     #time-container {
         padding: 5px;
 
-        background-image: url("./images/tooltime.png");
-        background-repeat: no-repeat;
-        background-position: left top;
+        box-sizing: border-box;
 
         font-family: "Monofonto", sans-serif;
         font-size: 50px;
+    }
+
+    #time-sign {
+        /*min-width: var(--splitter-timer-sign-min-width);*/
+        /*min-height: var(--splitter-timer-sign-min-height);*/
+    }
+
+    #time-hours {
+        /*min-width: var(--splitter-timer-hours-min-width);*/
+        /*min-height: var(--splitter-timer-hours-min-height);*/
+    }
+
+    #time-sep-hm {
+        /*min-width: var(--splitter-timer-separator-hours-minutes-min-width);*/
+        /*min-height: var(--splitter-timer-separator-hours-minutes-min-height);*/
+    }
+
+    #time-minutes {
+        /*min-width: var(--splitter-timer-minutes-min-width);*/
+        /*min-height: var(--splitter-timer-minutes-min-height);*/
+    }
+
+    #time-sep-ms {
+        /*min-width: var(--splitter-timer-separator-minutes-seconds-min-width);*/
+        /*min-height: var(--splitter-timer-separator-minutes-seconds-min-height);*/
+    }
+
+    #time-seconds {
+        /*min-width: var(--splitter-timer-seconds-min-width);*/
+        /*min-height: var(--splitter-timer-seconds-min-height);*/
+    }
+
+    #time-sep-sc {
+        /*min-width: var(--splitter-timer-separator-seconds-centis-min-width);*/
+        /*min-height: var(--splitter-timer-separator-seconds-centis-min-height);*/
+    }
+
+    #time-centis {
+        /*min-width: var(--splitter-timer-centis-min-width);*/
+        /*min-height: var(--splitter-timer-centis-min-height);*/
     }
 
     .timer-ahead {

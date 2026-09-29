@@ -1,0 +1,113 @@
+@layer skins {
+    /*
+     * ============================================================
+     * Split list
+     * ============================================================
+     */
+
+    #splitList {
+        min-width: 0;
+
+        background-image: url("./images/jinxtool.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    #splitList table tr.selected {
+        background: var(--active-segment-background);
+        color: var(--active-segment-text-color);
+    }
+
+    #splitList table td {
+        box-sizing: border-box;
+    }
+
+    #finalSegment table td {
+        border-top: var(--segment-border);
+        border-bottom: var(--segment-border);
+
+        box-sizing: border-box;
+    }
+
+    #finalSegment {
+        background: var(--color-primary);
+    }
+
+    /*
+     * ============================================================
+     * Vertical layout
+     * ============================================================
+     */
+
+    #splitter[data-layout="vertical"] #splitList {
+        min-width: 0;
+
+        overflow: hidden;
+    }
+
+    #splitter[data-layout="vertical"] #splitContainer {
+        min-width: 0;
+        min-height: 0;
+
+        height: 0;
+
+        flex: 1 1 0;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    #splitter[data-layout="vertical"] #splitList table td,
+    #splitter[data-layout="vertical"] #finalSegment table td {
+        border-top: var(--segment-border);
+        border-bottom: var(--segment-border);
+    }
+
+    #splitter[data-layout="vertical"] #finalSegment {
+        flex: 0 0 auto;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+    #splitter[data-layout="vertical"] #finalSegment table {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        box-sizing: border-box;
+    }
+
+    #splitter[data-layout="vertical"] #finalSegment table tr {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /*
+     * ============================================================
+     * Horizontal layout
+     * ============================================================
+     */
+
+    #splitter[data-layout="horizontal"] #splitList {
+        min-width: var(--splitter-segment-row-min-width);
+        min-height: 0;
+    }
+
+    #splitter[data-layout="horizontal"] #splitContainer {
+        min-width: 0;
+        min-height: 0;
+    }
+
+    #splitter[data-layout="horizontal"] #splitList table td,
+    #splitter[data-layout="horizontal"] #finalSegment table td {
+        border-top: 0;
+        border-bottom: var(--segment-border);
+    }
+}
