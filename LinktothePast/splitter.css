@@ -68,10 +68,10 @@
     }
 
     #attempts {
+        position: relative;
+
         font-size: var(--gameinfo-category-font-size);
         font-weight: var(--gameinfo-category-font-weight);
-
-        position: relative;
 
         padding: 2px 0;
 
