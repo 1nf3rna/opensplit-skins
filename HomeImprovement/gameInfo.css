@@ -27,27 +27,12 @@
         text-align: var(--gameinfo-text-align);
     }
 
-    /*#gameInfo > #gameTitle,
-    #gameInfo > #gameCategory,
-    #gameInfo > .game-variable,
-    #gameInfo > #attempts {
-        width: 100%;
-
-        box-sizing: border-box;
-    }*/
-
     #gameTitle {
-        /*min-width: var(--splitter-game-title-min-width);*/
-        /*min-height: var(--splitter-game-title-min-height);*/
-
         font-size: var(--gameinfo-title-size);
         font-weight: var(--gameinfo-title-font-weight);
     }
 
     #gameCategory {
-        /*min-width: var(--splitter-game-category-min-width);*/
-        /*min-height: var(--splitter-game-category-min-height);*/
-
         margin: var(--gameinfo-category-margin);
         padding-bottom: var(--gameinfo-category-bottom-space);
 
@@ -61,24 +46,10 @@
     }
 
     #attempts {
-        /*min-width: var(--splitter-attempts-min-width);*/
-        /*min-height: var(--splitter-attempts-min-height);*/
-
         position: static;
         right: auto;
 
         font-size: 14px;
         font-weight: var(--gameinfo-category-font-weight);
     }
-
-    /*#splitter[data-layout="horizontal"] #gameInfo > #gameTitle,
-    #splitter[data-layout="horizontal"] #gameInfo > #gameCategory,
-    #splitter[data-layout="horizontal"] #gameInfo > .game-variable,
-    #splitter[data-layout="horizontal"] #gameInfo > #attempts {
-        width: 100%;
-        min-width: 0;
-        max-width: none;
-
-        box-sizing: border-box;
-    }*/
 }
