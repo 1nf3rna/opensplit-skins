@@ -119,6 +119,18 @@
         width: 100%;
     }
 
+    #splitter[data-layout="horizontal"] #splitContainer table tr {
+        box-sizing: border-box;
+    }
+
+    #splitter[data-layout="horizontal"] #splitContainer table td,
+    #splitter[data-layout="horizontal"] #finalSegment table td {
+        border-top: 0;
+        border-right: 0;
+        border-bottom: var(--segment-border);
+        border-left: 0;
+    }
+
     #splitter[data-layout="horizontal"] .splitDelta,
     #splitter[data-layout="horizontal"] .splitComparison,
     #splitter[data-layout="horizontal"] .splitTime {

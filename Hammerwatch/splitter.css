@@ -53,6 +53,11 @@
         border-top: var(--segment-border);
         border-bottom: var(--segment-border);
         padding: var(--segment-padding);
+        box-sizing: border-box;
+    }
+
+    #splitter[data-layout="vertical"] #splitContainer .splitName {
+        padding-left: calc(5px + (var(--segment-depth, 0) * 16px));
     }
 
     .splitDelta {
@@ -87,12 +92,14 @@
     }
 
     #splitter[data-layout="horizontal"] #splitList table tr {
-        border-left: var(--segment-border);
-        border-right: var(--segment-border);
+        box-sizing: border-box;
     }
 
     #splitter[data-layout="horizontal"] #splitList table td {
-        border: var(--segment-border);
+        border-top: 0;
+        border-right: 0;
+        border-bottom: var(--segment-border);
+        border-left: 0;
         padding: var(--segment-padding);
     }
 
@@ -111,7 +118,10 @@
     }
 
     #splitter[data-layout="horizontal"] #finalSegment table td {
-        border: var(--segment-border);
+        border-top: 0;
+        border-right: 0;
+        border-bottom: var(--segment-border);
+        border-left: 0;
         padding: var(--segment-padding);
     }
 

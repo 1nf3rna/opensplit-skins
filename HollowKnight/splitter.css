@@ -94,12 +94,14 @@
     }
 
     #splitter[data-layout="horizontal"] #splitList table tr {
-        border-left: var(--segment-border);
-        border-right: var(--segment-border);
+        box-sizing: border-box;
     }
 
     #splitter[data-layout="horizontal"] #splitList table td {
-        border: var(--segment-border);
+        border-top: 0;
+        border-right: 0;
+        border-bottom: var(--segment-border);
+        border-left: 0;
         padding: var(--segment-padding);
 
         text-shadow:
@@ -129,7 +131,10 @@
     #splitter[data-layout="horizontal"] #finalSegment table td {
         padding: var(--segment-padding);
 
-        border: var(--segment-border);
+        border-top: 0;
+        border-right: 0;
+        border-bottom: var(--segment-border);
+        border-left: 0;
 
         color: var(--inactive-segment-text-color);
 
