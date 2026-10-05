@@ -8,7 +8,7 @@
         --splitlist-direction: column;
 
         /* Game information */
-        --gameinfo-text-align: left;
+        --gameinfo-text-align: center;
         --gameinfo-title-size: 18px;
         --gameinfo-title-font-weight: normal;
         --gameinfo-category-margin: 0;
@@ -41,13 +41,13 @@
 
         --splitter-segment-icon-min-width: 25px;
         --splitter-segment-icon-min-height: 25px;
-        --splitter-segment-name-min-width: 70px;
+        --splitter-segment-name-min-width: 30px;
         --splitter-segment-name-min-height: 40px;
-        --splitter-segment-delta-min-width: 70px;
+        --splitter-segment-delta-min-width: 30px;
         --splitter-segment-delta-min-height: 32px;
-        --splitter-segment-comparison-min-width: 70px;
+        --splitter-segment-comparison-min-width: 30px;
         --splitter-segment-comparison-min-height: 32px;
-        --splitter-segment-time-min-width: 70px;
+        --splitter-segment-time-min-width: 30px;
         --splitter-segment-time-min-height: 32px;
 
         --splitter-comparison-min-width: 200px;

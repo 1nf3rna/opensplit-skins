@@ -7,6 +7,8 @@
 
     #gameInfo {
         position: relative;
+        display: grid;
+        grid-template-columns: 1fr auto auto 1fr;
 
         background: var(--color-primary);
 
@@ -15,14 +17,17 @@
     }
 
     #gameTitle {
+        grid-column: 1 / -1;
         font-family: var(--split-delta-font-family), monospace;
         font-size: var(--gameinfo-title-size);
         font-weight: var(--gameinfo-title-font-weight);
     }
 
     #gameCategory {
-        position: relative;
-        top: -4px;
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: end;
+        align-self: baseline;
 
         margin: var(--gameinfo-category-margin);
         padding-bottom: var(--gameinfo-category-bottom-space);
@@ -110,6 +115,52 @@
             2px 2px 2px #1a163e;
     }
 
+    /* Keep the attempt count alongside the category in horizontal view. */
+    #splitter[data-layout="horizontal"] #gameInfo {
+        display: grid;
+        grid-template-columns:
+            minmax(var(--splitter-game-category-min-width, 50px), 1fr)
+            minmax(var(--splitter-attempts-min-width, 40px), max-content);
+        column-gap: var(--splitter-gameinfo-column-gap, 8px);
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        min-width: calc(
+            var(--splitter-game-category-min-width, 50px) +
+            var(--splitter-attempts-min-width, 40px) +
+            var(--splitter-gameinfo-column-gap, 8px) +
+            var(--splitter-game-info-padding-width, 32px)
+        );
+    }
+
+    #splitter[data-layout="horizontal"] #gameTitle {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    #splitter[data-layout="horizontal"] #gameCategory {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    #splitter[data-layout="horizontal"] #attempts {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .game-variable {
+        grid-column: 1 / -1;
+    }
+
+    #splitter[data-layout="horizontal"] #gameCategory {
+        grid-column: 1;
+        margin: 0;
+    }
+
+    #splitter[data-layout="horizontal"] #attempts {
+        grid-column: 2;
+    }
+
     /*
      * ============================================================
      * Final segment
@@ -156,14 +207,20 @@
      */
 
     #attempts {
-        position: relative;
-        top: -1.6em;
+        position: static;
+        top: auto;
+        right: auto;
 
-        margin-left: 10.5em;
+        grid-column: 3;
+        grid-row: 2;
+        justify-self: start;
+        align-self: baseline;
 
+        margin: 0;
+        padding: 0 0 0 8px;
         display: inline-block;
 
-        text-align: center;
+        text-align: left;
     }
 
     /*

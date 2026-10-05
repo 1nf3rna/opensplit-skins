@@ -37,16 +37,16 @@
         /*--splitter-segment-icon-min-width: 40px;*/
         /*--splitter-segment-icon-min-height: 40px;*/
 
-        --splitter-segment-name-min-width: 70px;
+        --splitter-segment-name-min-width: 30px;
         --splitter-segment-name-min-height: 40px;
 
-        --splitter-segment-delta-min-width: 70px;
+        --splitter-segment-delta-min-width: 30px;
         --splitter-segment-delta-min-height: 32px;
 
-        --splitter-segment-comparison-min-width: 70px;
+        --splitter-segment-comparison-min-width: 30px;
         --splitter-segment-comparison-min-height: 32px;
 
-        --splitter-segment-time-min-width: 70px;
+        --splitter-segment-time-min-width: 30px;
         --splitter-segment-time-min-height: 32px;
 
         /*
