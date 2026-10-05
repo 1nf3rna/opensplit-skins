@@ -1,29 +1,27 @@
 @layer skins {
-    /*
-     * ============================================================
-     * Game info
-     * ============================================================
-     */
+    /* Shared skin appearance */
+    #finalSegment {
+        background: var(--color-primary);
+    }
 
     #gameInfo {
-        position: relative;
-
         background: var(--color-primary);
-
         text-align: var(--gameinfo-text-align);
     }
 
     #gameTitle {
         font-size: var(--gameinfo-title-size);
         font-weight: var(--gameinfo-title-font-weight);
+        padding: var(--gameinfo-title-padding);
+        line-height: var(--gameinfo-title-line-height);
     }
 
     #gameCategory {
         margin: var(--gameinfo-category-margin);
-        padding-bottom: var(--gameinfo-category-bottom-space);
-
+        padding: var(--gameinfo-category-padding);
         font-size: var(--gameinfo-category-font-size);
         font-weight: var(--gameinfo-category-font-weight);
+        line-height: var(--gameinfo-category-line-height);
     }
 
     /*
@@ -56,87 +54,21 @@
         box-sizing: border-box;
     }
 
-    #splitter[data-layout="vertical"] #splitContainer .splitName {
-        padding-left: calc(5px + (var(--segment-depth, 0) * 16px));
+    .splitName {
+        width: var(--segment-name-width);
     }
 
     .splitDelta {
-        font-family: var(--split-delta-font-family);
         text-align: var(--split-delta-text-align);
+        font-family: var(--split-delta-font-family), monospace;
     }
 
     .splitComparison {
-        font-family: var(--split-comparison-font-family);
         text-align: var(--split-comparison-text-align);
+        font-family: var(--split-comparison-font-family), monospace;
     }
 
-    /*
-     * ============================================================
-     * Horizontal layout
-     * ============================================================
-     *
-     * The application owns the horizontal column layout.
-     * The skin only supplies the visual treatment for those
-     * columns and cells.
-     */
-
-    #splitter[data-layout="horizontal"] #splitList {
-        background: var(--color-primary);
-    }
-
-    #splitter[data-layout="horizontal"] #splitContainer {
-        background-image: url("./images/base.jpg");
-        background-repeat: no-repeat;
-        background-position: center bottom;
-        background-size: cover;
-    }
-
-    #splitter[data-layout="horizontal"] #splitList table tr {
-        box-sizing: border-box;
-    }
-
-    #splitter[data-layout="horizontal"] #splitList table td {
-        border-top: 0;
-        border-right: 0;
-        border-bottom: var(--segment-border);
-        border-left: 0;
-        padding: var(--segment-padding);
-    }
-
-    /*
-     * ============================================================
-     * Final segment
-     * ============================================================
-     */
-
-    #finalSegment {
-        background: var(--color-primary);
-    }
-
-    #splitter[data-layout="horizontal"] #finalSegment {
-        background: var(--color-primary);
-    }
-
-    #splitter[data-layout="horizontal"] #finalSegment table td {
-        border-top: 0;
-        border-right: 0;
-        border-bottom: var(--segment-border);
-        border-left: 0;
-        padding: var(--segment-padding);
-    }
-
-    #splitter[data-layout="horizontal"] #finalSegment .selected {
-        background: var(--active-segment-background);
-        color: var(--active-segment-text-color);
-    }
-
-    /*
-     * ============================================================
-     * Horizontal splitter info
-     * ============================================================
-     */
-
-    /* Match the measured component layout in vertical view. */
+    /* Keep the splitter info in a column in vertical view. */
     #splitter[data-layout="vertical"] #splitterInfo {
         display: flex;
         flex-direction: column;
@@ -144,7 +76,27 @@
         box-sizing: border-box;
     }
 
-    /* Keep horizontal splitter info in a single measured grid column. */
+    /*
+     * Horizontal view keeps all splitter info visible in one grid column.
+     * The minimum-size calculator follows these actual grid tracks.
+     */
+    #splitter[data-layout="horizontal"] #gameInfo {
+        flex: 0 1 max-content;
+        width: auto;
+        min-width: calc(
+            var(--splitter-gameinfo-min-width) +
+                var(--splitter-game-info-padding-width, 32px)
+        );
+        max-width: none;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    #splitter[data-layout="horizontal"] #splitList {
+        min-width: min-content;
+        min-height: 0;
+    }
+
     #splitter[data-layout="horizontal"] #splitterInfo {
         display: grid;
         min-width: 0;
@@ -177,6 +129,32 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        text-align: center;
+    }
+
+    #splitter[data-layout="horizontal"] .segmentIcon {
+        background: transparent;
+    }
+
+    #splitter[data-layout="horizontal"] .splitName {
+        width: 100%;
+    }
+
+    #splitter[data-layout="horizontal"] #splitContainer table tr {
+        box-sizing: border-box;
+    }
+
+    #splitter[data-layout="horizontal"] #splitContainer table td,
+    #splitter[data-layout="horizontal"] #finalSegment table td {
+        border-top: 0;
+        border-right: 0;
+        border-bottom: var(--segment-border);
+        border-left: 0;
+    }
+
+    #splitter[data-layout="horizontal"] .splitDelta,
+    #splitter[data-layout="horizontal"] .splitComparison,
+    #splitter[data-layout="horizontal"] .splitTime {
         text-align: center;
     }
 }

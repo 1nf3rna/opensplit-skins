@@ -1,33 +1,40 @@
 @layer vars {
     :root {
-        /* colors */
-        --color-primary: linear-gradient(to bottom, #4884bb, #053768);
+        /* Colors */
+        --color-primary: linear-gradient(to bottom, #4f0f7f, #400060);
 
         /* Layout */
-        --splitter-layout: vertical;
         --splitlist-direction: column;
 
-        /* game information section */
+        /*
+         * Preferred splitter layout.
+         *
+         * Supported values:
+         *   vertical
+         *   horizontal
+         *
+         * The splitter may also be switched at runtime through
+         * the splitter context menu.
+         */
+        --splitter-layout: vertical;
+
+        /* Game info */
         --gameinfo-text-align: center;
+
+        /* Game info title */
         --gameinfo-title-size: 20px;
         --gameinfo-title-font-weight: normal;
-        --gameinfo-category-margin: 0;
-        --gameinfo-category-bottom-space: 10px;
+        --gameinfo-title-padding: 4px 0;
+        --gameinfo-title-line-height: 1.15;
+
+        /* Game info category */
+        --gameinfo-category-margin: 4px 0 0;
+        --gameinfo-category-padding: 0 0 4px;
         --gameinfo-category-font-size: 20px;
         --gameinfo-category-font-weight: normal;
+        --gameinfo-category-line-height: 1.1;
 
-        /* segment list */
-        --active-segment-background: #000;
-        --active-segment-text-color: #fff;
-        --segment-border: 2px solid #333;
-        --segment-padding: 5px;
-        --segment-name-width: 60%;
-        --split-delta-font-family: Monofonto, monospace;
-        --split-delta-text-align: right;
-        --split-comparison-text-align: right;
-        --split-comparison-font-family: Monofonto, monospace;
-
-        /* Effective minimum sizes for both splitter layouts. */
+        /* Effective minimum sizes used by the splitter in either layout. */
         --splitter-game-title-min-width: 115px;
         --splitter-game-title-min-height: 28px;
         --splitter-game-category-min-width: 100px;
@@ -38,6 +45,23 @@
         --splitter-attempts-min-height: 20px;
         --splitter-game-info-padding-width: 32px;
         --splitter-game-info-padding-height: 24px;
+
+        /* Active Split */
+        --active-segment-background: #000;
+        --active-segment-text-color: #fff;
+
+        /* Segment Layout */
+        --segment-border: 2px solid #333;
+        --segment-padding: 5px;
+        --segment-name-width: 60%;
+
+        /* Delta */
+        --split-delta-font-family: Monofonto;
+        --split-delta-text-align: right;
+
+        /* Comparison */
+        --split-comparison-font-family: Monofonto;
+        --split-comparison-text-align: right;
 
         --splitter-segment-icon-min-width: 25px;
         --splitter-segment-icon-min-height: 25px;
