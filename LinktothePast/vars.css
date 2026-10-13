@@ -28,11 +28,11 @@
         --split-comparison-font-family: "Hylia Serif Beta";
 
         /* Effective minimum sizes for both splitter layouts. */
-        --splitter-game-title-min-width: 115px;
+        --splitter-game-title-min-width: 15px;
         --splitter-game-title-min-height: 28px;
-        --splitter-game-category-min-width: 100px;
+        --splitter-game-category-min-width: 50px;
         --splitter-game-category-min-height: 26px;
-        --splitter-game-variable-min-width: 100px;
+        --splitter-game-variable-min-width: 50px;
         --splitter-game-variable-min-height: 20px;
         --splitter-attempts-min-width: 40px;
         --splitter-attempts-min-height: 20px;
@@ -50,7 +50,7 @@
         --splitter-segment-time-min-width: 30px;
         --splitter-segment-time-min-height: 32px;
 
-        --splitter-comparison-min-width: 100px;
+        --splitter-comparison-min-width: 50px;
         --splitter-comparison-min-height: 30px;
 
         --splitter-timer-sign-min-width: 25px;
